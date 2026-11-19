@@ -1,3 +1,9 @@
+/* ---------- background images: make --img paths absolute ---------- */
+document.querySelectorAll('[style*="--img"]').forEach(el => {
+  const m = el.getAttribute('style').match(/--img:\s*url\(["']?([^"')]+)["']?\)/);
+  if (m) el.style.setProperty('--img', `url("${new URL(m[1], location.href).href}")`);
+});
+
 /* ---------- header menu ---------- */
 const burger = document.getElementById('burger');
 burger.addEventListener('click', () => document.body.classList.toggle('menu-open'));
