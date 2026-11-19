@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HYUCKJIN Energy Plant Engineering</title>
+<meta name="description" content="HYUCKJIN Energy Plant Engineering (HJE) — waste-to-energy plants with patented low-NOx combustion. Since 1978.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="top">
+  <div class="hdr__in">
+    <a href="#top" class="logo" aria-label="HYUCKJIN Energy Plant Engineering">
+      <span class="logo__mark">HJE</span>
+      <span class="logo__txt">HYUCKJIN<br><small>Energy Plant Engineering</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#about">About us</a>
+      <a href="#technology">Technology</a>
+      <a href="#projects">Projects</a>
+      <a href="#sustainability">Sustainability</a>
+      <a href="#history">History</a>
+    </nav>
+    <div class="hdr__tools">
+      <div class="lang">
+        <button class="lang__btn" aria-haspopup="true">EN <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></button>
+        <ul class="lang__menu">
+          <li><a href="#" aria-current="true">English</a></li>
+          <li><span>한국어 <em>soon</em></span></li>
+        </ul>
+      </div>
+      <a href="#contact" class="btn btn--line">Contact us</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO (carousel) ============ -->
+<section class="hero" id="hero">
+  <div class="hero__slides">
+    <article class="slide is-on" style="--img:url(assets/ari/05-plant-hero.jpg)">
+      <div class="slide__txt">
+        <h1>Clean power from city waste.</h1>
+        <p>We design and build waste-to-energy plants that turn municipal, industrial and hospital waste into electricity, with patented low-NOx combustion.</p>
+        <a href="#technology" class="btn btn--fill">Our technology</a>
+      </div>
+    </article>
+    <article class="slide" style="--img:url(assets/ari/01-langkawi-plant.jpg)">
+      <div class="slide__txt">
+        <h1>Langkawi, Malaysia.</h1>
+        <p>A 100 t/day municipal waste plant ordered by the Malaysian government. Approved for operation after government technology tests and commissioning.</p>
+        <a href="#projects" class="btn btn--fill">View the project</a>
+      </div>
+    </article>
+    <article class="slide" style="--img:url(assets/ari/07-conveyor.jpg)">
+      <div class="slide__txt">
+        <h1>More power from every tonne of waste.</h1>
+        <p>Waste is sorted, dried and burned completely. The recovered heat drives turbines, turning city waste into a steady supply of electricity.</p>
+        <a href="#technology" class="btn btn--fill">How it works</a>
+      </div>
+    </article>
+    <article class="slide" style="--img:url(assets/hero-sunset.jpg)">
+      <div class="slide__txt">
+        <h1>Engineering since 1978.</h1>
+        <p>45+ years of plant engineering with Korea's leading industrial groups, now delivering projects across Southeast Asia and beyond.</p>
+        <a href="#history" class="btn btn--fill">Our history</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="hero__cards" role="tablist">
+    <button class="hcard is-on" data-i="0"><img src="assets/ari/05-plant-hero.jpg" alt=""><span>Waste-to-energy</span><i></i></button>
+    <button class="hcard" data-i="1"><img src="assets/ari/01-langkawi-plant.jpg" alt=""><span>Langkawi project</span><i></i></button>
+    <button class="hcard" data-i="2"><img src="assets/ari/07-conveyor.jpg" alt=""><span>Waste to power</span><i></i></button>
+    <button class="hcard" data-i="3"><img src="assets/hero-sunset.jpg" alt=""><span>Since 1978</span><i></i></button>
+    <button class="hero__pause" id="pause" aria-label="Pause"><svg width="12" height="12" viewBox="0 0 12 12"><rect x="2" y="1" width="2.5" height="10"/><rect x="7.5" y="1" width="2.5" height="10"/></svg></button>
+  </div>
+  <span class="hero__scroll">Scroll</span>
+</section>
+
+<!-- ============ STATEMENT ============ -->
+<section class="statement" id="about">
+  <div class="wrap">
+    <h2 class="reveal">Not an incinerator that ends with smoke. A power plant that starts with waste.</h2>
+    <div class="statement__body reveal">
+      <p>HYUCKJIN Energy Plant Engineering (HJE) has worked only in environmental engineering for more than 45 years. We burn waste completely, keep the flue gas clean, and send the heat to generate electricity for the communities and industries around the plant.</p>
+      <p>Our plants run in Korea and Malaysia, and governments in the Philippines, Indonesia, Vietnam, Cambodia and Costa Rica have asked us for proposals.</p>
+      <a href="#history" class="link">About the company <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMPACT PANEL (grey + dark stats) ============ -->
+<section class="impact" id="sustainability">
+  <div class="impact__panel reveal">
+    <div class="impact__txt">
+      <p class="eyebrow">Sustainability</p>
+      <h2>Waste in.<br>Power out.<br>Nothing to landfill.</h2>
+      <p>Every tonne we burn is a tonne that does not go to landfill. Metals and glass are sorted out for recycling before combustion, and the remaining heat becomes electricity.</p>
+      <a href="#technology" class="btn btn--fill">How it works</a>
+    </div>
+    <div class="impact__stats">
+      <div class="stat"><b><span class="count" data-to="30" data-pre="1/">1/30</span></b><em>Chemicals</em><p>used for flue gas treatment, compared with conventional incinerators</p></div>
+      <div class="stat"><b><span class="count" data-to="30" data-pre="1/">1/30</span></b><em>Wastewater</em><p>generated per tonne of waste burned</p></div>
+      <div class="stat"><b><span class="count" data-to="3">3</span>×</b><em>Re-burn stages</em><p>in our patented low-NOx combustion</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE (full-bleed story) ============ -->
+<section class="feature" style="--img:url(assets/ari/06-green-band.jpg)">
+  <div class="feature__in reveal">
+    <p class="eyebrow">Our vision</p>
+    <h2>Plants that sit inside green landscapes, not apart from them.</h2>
+    <a href="#projects" class="link link--light">Explore our projects <span>→</span></a>
+  </div>
+</section>
+
+<!-- ============ TECHNOLOGY ============ -->
+<section class="tech" id="technology">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Technology</p>
+      <h2>How a HJE plant works</h2>
+    </div>
+
+    <ol class="flow reveal">
+      <li><span>01</span><h3>Receive &amp; sort</h3><p>Waste arrives and is sorted. Metals, cans and glass are taken out for recycling.</p></li>
+      <li><span>02</span><h3>Dry &amp; deodorize</h3><p>Odor-laden air is used as combustion air and broken down above 250 °C.</p></li>
+      <li><span>03</span><h3>Low-NOx combustion</h3><p>Patented three-stage re-burn controls fuel/air mixing, oxygen and flame temperature.</p></li>
+      <li><span>04</span><h3>Clean flue gas</h3><p>Air pollution control with continuous stack monitoring (CMS/TMS).</p></li>
+      <li><span>05</span><h3>Generate power</h3><p>Recovered heat drives turbines that supply electricity to the grid and industry.</p></li>
+    </ol>
+
+    <div class="tech__grid">
+      <article class="tcard reveal"><img src="assets/ari/02-stack.jpg" alt="Incinerator and flue gas treatment"><div><h3>Incinerator systems</h3><p>Municipal, industrial and hospital waste incinerators and furnace systems.</p></div></article>
+      <article class="tcard reveal"><img src="assets/ari/03-hall.jpg" alt="Waste receiving hall"><div><h3>Power plant engineering</h3><p>Waste-to-energy power plant design, construction and operation support.</p></div></article>
+      <article class="tcard reveal"><img src="assets/ari/04-factory.jpg" alt="HJE factory"><div><h3>PHG power systems</h3><p>Pyrolysis hydrogen gasification (PHG) power plants with optimized gas burner and zeolite.</p></div></article>
+    </div>
+
+    <ul class="tech__list reveal">
+      <li>Food waste and sewage wastewater solutions</li>
+      <li>Sewage sludge treatment</li>
+      <li>White smoke removal systems</li>
+      <li>Sludge dryers (steel, paper, sewage, livestock manure)</li>
+      <li>Combustion systems using waste oil and methane gas</li>
+      <li>RTO systems for VOC and odor removal</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="sec-head sec-head--row reveal">
+      <div><p class="eyebrow">Projects</p><h2>Where we work</h2></div>
+      <p class="sec-head__note">Plants built and projects under development worldwide.</p>
+    </div>
+
+    <div class="pgrid">
+      <article class="pcard pcard--big reveal">
+        <img src="assets/ari/01-langkawi-plant.jpg" alt="Langkawi incinerator plant">
+        <div class="pcard__body">
+          <span class="tag tag--done">In operation</span>
+          <h3>Langkawi, Malaysia</h3>
+          <p>Municipal and tourism waste incinerator for the Malaysian government. Replaced a previously failed plant. Odor and fly problems solved; stack emissions measured low. A second line is planned.</p>
+          <dl><div><dt>Capacity</dt><dd>100 t/day</dd></div><div><dt>Completed</dt><dd>2019</dd></div><div><dt>Waste</dt><dd>Municipal</dd></div></dl>
+        </div>
+      </article>
+      <article class="pcard reveal">
+        <img src="assets/ari/05-plant-hero.jpg" alt="Waste-to-energy plant concept">
+        <div class="pcard__body">
+          <span class="tag">Proposed</span>
+          <h3>Cambodia</h3>
+          <p>Municipal waste-to-energy plant on a 30-year BOT basis. Electricity for 17,250+ households and 35+ long-term jobs.</p>
+          <dl><div><dt>Capacity</dt><dd>100 t/day</dd></div><div><dt>Model</dt><dd>BOT · 30 yr</dd></div></dl>
+        </div>
+      </article>
+      <article class="pcard pcard--text reveal">
+        <div class="pcard__body">
+          <span class="tag">MOA signed</span>
+          <h3>Philippines</h3>
+          <p>Industrial waste incinerator and an incinerator with electricity generation.</p>
+          <dl><div><dt>Capacity</dt><dd>300 t/day · 330 t/day</dd></div></dl>
+        </div>
+      </article>
+      <article class="pcard pcard--text reveal">
+        <div class="pcard__body">
+          <span class="tag">MOA signed</span>
+          <h3>Indonesia</h3>
+          <p>Hospital waste treatment and electricity generation from hospital waste.</p>
+          <dl><div><dt>Capacity</dt><dd>500 t/day · 250 t/day</dd></div></dl>
+        </div>
+      </article>
+      <article class="pcard pcard--text reveal">
+        <div class="pcard__body">
+          <span class="tag">Government request</span>
+          <h3>Vietnam · Costa Rica</h3>
+          <p>Proposals requested by national governments following the Langkawi plant.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- installation record -->
+    <div class="record reveal" id="record">
+      <div class="record__head">
+        <h3>Installation record</h3>
+        <div class="filters" role="group" aria-label="Filter">
+          <button class="is-on" data-f="all">All</button>
+          <button data-f="city">Municipal</button>
+          <button data-f="factory">Industrial</button>
+          <button data-f="hospital">Hospital</button>
+          <button data-f="kiln">Kiln / Dryer</button>
+        </div>
+      </div>
+      <div class="record__table">
+        <table>
+          <thead><tr><th>Location</th><th>Client</th><th>Waste / fuel</th><th>Capacity</th><th>Main contractor</th></tr></thead>
+          <tbody id="recBody"></tbody>
+        </table>
+      </div>
+      <button class="record__more" id="recMore">Show all installations</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF: certs + patents ============ -->
+<section class="proof">
+  <div class="wrap proof__in">
+    <div class="proof__col reveal">
+      <p class="eyebrow">Certification</p>
+      <h2>Tested against Korea's emission standards — among the strictest in the world.</h2>
+      <div class="certs">
+        <div><b>ISO 14001:2015</b><span>Environmental Management System</span></div>
+        <div><b>ISO 9001:2015</b><span>Quality Management System</span></div>
+      </div>
+    </div>
+    <div class="proof__col reveal">
+      <p class="eyebrow">Patents</p>
+      <ul class="patents">
+        <li><span>01</span>Garbage incinerator for NOx reduction</li>
+        <li><span>02</span>Powder fuel gasification apparatus</li>
+        <li><span>03</span>Organic waste gas pyrolysis device</li>
+        <li><span>04</span>Waste food, sewage sludge and livestock manure treatment</li>
+        <li><span>05</span>Food waste treatment methods</li>
+        <li><span>06</span>Vapor treatment device for volatile substance storage tanks</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="partners">
+  <div class="wrap">
+    <p class="eyebrow reveal">Partners</p>
+    <h2 class="reveal">Built with Korea's leading engineering groups</h2>
+    <ul class="logos reveal">
+      <li>Samsung Engineering</li><li>LG Machine</li><li>Hyundai Heavy Industries</li><li>SK Construction</li><li>Hyundai Engineering</li><li>POSCO ICT</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ HISTORY ============ -->
+<section class="history" id="history">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">History</p><h2>45+ years in environmental engineering</h2></div>
+    <div class="timeline reveal" id="timeline">
+      <div class="tl"><b>1978</b><p>Founded as Korea agent for Lamborghini and Thermomec burners (Italy)</p></div>
+      <div class="tl"><b>1993</b><p>Developed gun-type heavy oil burner</p></div>
+      <div class="tl"><b>2006</b><p>Selected by the Ministry of Knowledge Economy for food-waste-to-fuel technology</p></div>
+      <div class="tl"><b>2010</b><p>Supplied dryer and deodorization system to Incheon landfill RDF facility</p></div>
+      <div class="tl"><b>2013</b><p>New RTO system solves food waste odor</p></div>
+      <div class="tl"><b>2014–15</b><p>Patents for waste food, livestock manure and eco-friendly processing</p></div>
+      <div class="tl"><b>2016</b><p>Contract with the Malaysian government for the Langkawi incinerator</p></div>
+      <div class="tl"><b>2018</b><p>Established H.J.E.C for manufacturing and export of large incinerators</p></div>
+      <div class="tl"><b>2019</b><p>Langkawi plant completed · Low-NOx incinerator patent · PHG system developed</p></div>
+      <div class="tl"><b>Today</b><p>Projects in development across Southeast Asia and Central America</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CEO ============ -->
+<section class="ceo">
+  <div class="wrap ceo__in">
+    <img class="reveal" src="assets/hero-sunset.jpg" alt="">
+    <blockquote class="reveal">
+      <p>“We put the customer's need for a clean environment first, and we keep improving our technology to meet it. Our goal is to be a company that partners around the world can trust.”</p>
+      <footer>Sang Chul Choi<span>CEO · Top Engineer</span></footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap contact__in">
+    <div class="reveal">
+      <h2>Planning a waste-to-energy project?</h2>
+      <p>Talk to our engineering team.</p>
+      <a class="btn btn--fill" href="mailto:hyuckjinb@hanmail.net">hyuckjinb@hanmail.net</a>
+    </div>
+    <dl class="addr reveal">
+      <div><dt>Head office</dt><dd>534, Gomo-ri, Soheul-eup, Pocheon-si, Gyeonggi-do, Republic of Korea</dd></div>
+      <div><dt>2nd factory</dt><dd>35, Noksan Saneop Jung-ro, Gangseo-gu, Busan, Republic of Korea</dd></div>
+      <div><dt>Branch</dt><dd>REBIO ALAM SEKITAR SDN. BHD., Kuala Lumpur, Malaysia</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__cols">
+      <div><h4>About us</h4><a href="#about">Our company</a><a href="#history">History</a><a href="#sustainability">Sustainability</a></div>
+      <div><h4>Technology</h4><a href="#technology">How it works</a><a href="#technology">Solutions</a><a href="#record">Patents &amp; certification</a></div>
+      <div><h4>Projects</h4><a href="#projects">Langkawi, Malaysia</a><a href="#projects">Cambodia</a><a href="#record">Installation record</a></div>
+      <div><h4>Contact</h4><a href="#contact">Head office</a><a href="#contact">Busan factory</a><a href="#contact">Kuala Lumpur branch</a></div>
+    </div>
+    <div class="ftr__bottom">
+      <a href="#top" class="logo logo--light"><span class="logo__mark">HJE</span><span class="logo__txt">HYUCKJIN<br><small>Energy Plant Engineering</small></span></a>
+      <p>© HYUCKJIN Energy Plant Engineering. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
