@@ -129,7 +129,8 @@ h3{font-size:22px;line-height:1.25}
 .feature{position:relative;max-width:1440px;margin:0 auto clamp(80px,10vw,140px);height:clamp(420px,60vw,640px);color:#fff;display:flex;align-items:flex-end;overflow:hidden}
 .feature::before{content:"";position:absolute;inset:-10% 0;background:var(--img) center/cover;transform:translateY(var(--py,0))}
 .feature::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(8,20,14,.85))}
-.feature__in{position:relative;z-index:1;padding:clamp(32px,5vw,64px) max(var(--gut),calc((100vw - 1440px)/2 + var(--gut) + 40px));max-width:820px}
+.feature__in{position:relative;z-index:1;width:100%;padding:clamp(32px,5vw,64px) clamp(var(--gut),5vw,88px)}
+.feature__in>*{max-width:760px}
 .feature .eyebrow{color:var(--leaf)}
 .feature h2{margin-bottom:28px;font-size:clamp(30px,3.8vw,50px)}
 
@@ -194,7 +195,8 @@ tbody tr:hover{background:var(--mist)}
 .proof{padding:clamp(80px,10vw,140px) 0}
 .proof__in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px)}
 .proof h2{font-size:clamp(28px,3vw,40px);margin-bottom:32px}
-.certs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.certs{display:grid;grid-template-columns:150px 1fr;gap:12px 24px;align-items:center}
+.certs .cert-logo{width:150px;height:auto;grid-row:span 2}
 .certs div{background:var(--deep);color:#fff;padding:24px;border-radius:4px}
 .certs b{display:block;font-size:22px;color:var(--leaf);margin-bottom:6px}
 .certs span{font-size:14px;opacity:.8}
@@ -269,6 +271,7 @@ tbody tr:hover{background:var(--mist)}
   .logo img{height:32px}
   .hero{min-height:620px}
   .slide::after{background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.8) 45%,rgba(255,255,255,0) 75%)}
+  .slide--dark::after{background:linear-gradient(180deg,rgba(8,20,14,.88) 0%,rgba(8,20,14,.65) 45%,rgba(8,20,14,.05) 78%)}
   .slide__txt{margin-top:32px;padding-right:var(--gut)}
   .slide__txt p{font-size:16px}
   .hero__cards{left:var(--gut);right:var(--gut);bottom:20px;gap:6px}
@@ -284,7 +287,8 @@ tbody tr:hover{background:var(--mist)}
   .pgrid{grid-template-columns:1fr}
   .pcard--big{grid-column:auto;grid-row:auto}
   .pcard--big img{min-height:220px}
-  .certs{grid-template-columns:1fr}
+  .certs{grid-template-columns:110px 1fr}
+  .certs .cert-logo{width:110px}
   .logos{grid-template-columns:repeat(2,1fr)}
   .ftr__cols{grid-template-columns:1fr 1fr;row-gap:32px}
 }

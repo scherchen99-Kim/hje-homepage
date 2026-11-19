@@ -7,7 +7,7 @@ document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () 
 const hero = document.getElementById('hero');
 const slides = [...hero.querySelectorAll('.slide')];
 const cards = [...hero.querySelectorAll('.hcard')];
-const DUR = 7000;
+const DUR = 6000;
 let cur = 0, timer, paused = false;
 hero.style.setProperty('--dur', DUR / 1000 + 's');
 
