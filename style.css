@@ -39,10 +39,18 @@ h3{font-size:22px;line-height:1.25}
 /* ===== header ===== */
 .hdr{position:fixed;inset:0 0 auto;height:var(--hdr);z-index:50;background:var(--deep);color:#fff}
 .hdr__in{height:100%;max-width:1440px;margin:0 auto;padding:0 var(--gut);display:flex;align-items:center;gap:32px}
-.logo{display:flex;align-items:center;gap:10px}
-.logo__mark{font-weight:700;font-size:22px;letter-spacing:-.03em;color:var(--leaf)}
-.logo__txt{font-size:13px;font-weight:700;letter-spacing:.06em;line-height:1.1;border-left:1px solid rgba(255,255,255,.3);padding-left:10px}
-.logo__txt small{font-size:10px;font-weight:500;letter-spacing:.04em;opacity:.75}
+.logo{display:flex;align-items:center}
+.logo img{height:40px;width:auto}
+.logo--foot img{height:48px}
+
+/* ===== news ===== */
+.news{padding:0 0 clamp(80px,10vw,140px)}
+.news__in{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
+.news__img img{width:100%;border-radius:4px;aspect-ratio:3/2;object-fit:cover}
+.news__img figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+.news h2{font-size:clamp(28px,3vw,40px);margin-bottom:14px}
+.news__src{font-size:14px;font-weight:600;color:var(--green);margin-bottom:20px}
+.news__txt p:not(.eyebrow):not(.news__src){color:var(--muted);margin-bottom:24px}
 .nav{margin-left:auto;display:flex}
 .nav a{font-size:14px;padding:6px 16px;border-left:1px solid rgba(255,255,255,.2);opacity:.9}
 .nav a:first-child{border-left:0}
@@ -254,7 +262,7 @@ tbody tr:hover{background:var(--mist)}
 @media (max-width:760px){
   body{font-size:16px}
   .btn--line{display:none}
-  .logo__txt small{display:none}
+  .logo img{height:32px}
   .hero{min-height:620px}
   .slide::after{background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.8) 45%,rgba(255,255,255,0) 75%)}
   .slide__txt{margin-top:32px;padding-right:var(--gut)}
@@ -263,7 +271,7 @@ tbody tr:hover{background:var(--mist)}
   .hcard{flex:1;width:auto;height:64px}
   .hcard span{font-size:11px;left:6px;right:6px;bottom:6px}
   .hero__scroll{display:none}
-  .statement .wrap,.proof__in,.ceo__in,.contact__in{grid-template-columns:1fr}
+  .statement .wrap,.news__in,.proof__in,.ceo__in,.contact__in{grid-template-columns:1fr}
   .impact__stats{margin:-24px var(--gut) 0;width:auto}
   .flow{grid-template-columns:1fr}
   .tech__grid,.tech__list{grid-template-columns:1fr}
