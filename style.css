@@ -19,9 +19,9 @@ img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 ul,ol{list-style:none}
-h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.08}
+h1,h2{font-weight:700;letter-spacing:-.02em;line-height:1.08}
 h2{font-size:clamp(32px,4.4vw,56px)}
-h3{font-size:22px;line-height:1.25}
+h3{font-size:22px;line-height:1.25;font-weight:700;letter-spacing:-.02em}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
 
@@ -120,7 +120,7 @@ h3{font-size:22px;line-height:1.25}
 .impact__txt h2{margin-bottom:24px}
 .impact__txt p:not(.eyebrow){max-width:520px;color:var(--muted);margin-bottom:32px}
 .impact__stats{position:relative;background:var(--deep);color:#fff;padding:44px 40px;display:grid;gap:28px;margin-right:var(--gut)}
-.stat b{display:block;font-size:52px;font-weight:600;letter-spacing:-.03em;line-height:1;color:var(--leaf)}
+.stat b{display:block;font-size:52px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--leaf)}
 .stat em{display:block;font-style:normal;font-weight:600;font-size:18px;margin:8px 0 4px}
 .stat p{font-size:14px;opacity:.75}
 .stat+.stat{border-top:1px solid rgba(255,255,255,.15);padding-top:24px}
@@ -217,7 +217,7 @@ tbody tr:hover{background:var(--mist)}
 .timeline{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:var(--leaf) transparent}
 .tl{flex:0 0 220px;scroll-snap-align:start;padding:28px 24px 0 0;border-top:1px solid rgba(255,255,255,.25);position:relative}
 .tl::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--leaf)}
-.tl b{display:block;font-size:32px;font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
+.tl b{display:block;font-size:32px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
 .tl p{font-size:15px;opacity:.8}
 
 /* ===== ceo ===== */
@@ -296,3 +296,9 @@ tbody tr:hover{background:var(--mist)}
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* ===== Korean ===== */
+html[lang="ko"] body{font-family:"Pretendard","Inter Tight",system-ui,-apple-system,sans-serif;word-break:keep-all;overflow-wrap:break-word}
+html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3{letter-spacing:-.03em;line-height:1.2}
+html[lang="ko"] h1,html[lang="ko"] h2{font-weight:800}
+html[lang="ko"] .eyebrow{letter-spacing:.04em}
