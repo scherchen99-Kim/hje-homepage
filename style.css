@@ -512,3 +512,72 @@ html[lang="zh-CN"] p,html[lang="zh-CN"] li,html[lang="zh-CN"] dd,html[lang="zh-C
 /* Cambodia card: site map, centred on the plant location */
 .pcard img.pcard__map{object-position:47% 48%}
 img[data-zoom]{cursor:zoom-in}
+
+/* --- spacing after section reorder --- */
+.tech{padding-top:clamp(72px,9vw,120px)}
+.news{padding:clamp(64px,7vw,96px) 0 clamp(24px,3vw,40px)}
+.proof{padding-top:clamp(56px,6vw,88px)}
+
+/* =====================================================================
+   SECTION BACKGROUNDS BY MENU GROUP — white / light gray alternating
+   Company: white · Technology: gray · Projects: white · Certification: gray · Contact: white
+   ===================================================================== */
+:root{--band:#eef2f8}
+
+/* Company (white): intro + history, history no longer navy */
+.statement{background:#fff}
+.history{background:#fff;color:var(--ink);padding-top:0}
+.history .eyebrow{color:var(--blue)}
+.history .eyebrow::before{background:
+  linear-gradient(var(--lgreen),var(--lgreen)) 0 0/100% 3px no-repeat,
+  linear-gradient(var(--sky),var(--sky)) 0 50%/100% 3px no-repeat,
+  linear-gradient(var(--blue),var(--blue)) 0 100%/100% 3px no-repeat}
+.tl{border-top-color:var(--line)}
+.tl b{color:var(--navy)}
+.tl p{opacity:1;color:var(--muted)}
+.tl::before{background:var(--sky)}
+
+/* Technology (gray): process, sustainability, vision band */
+.tech{background:var(--band);padding-bottom:clamp(56px,7vw,96px)}
+.plant img{mix-blend-mode:multiply}               /* white illustration background melts into gray */
+.impact{background:var(--band);color:var(--ink);margin-bottom:0;padding-top:clamp(24px,3vw,40px);padding-bottom:clamp(64px,8vw,104px)}
+.impact .eyebrow{color:var(--blue)}
+.impact .eyebrow::before{background:
+  linear-gradient(var(--lgreen),var(--lgreen)) 0 0/100% 3px no-repeat,
+  linear-gradient(var(--sky),var(--sky)) 0 50%/100% 3px no-repeat,
+  linear-gradient(var(--blue),var(--blue)) 0 100%/100% 3px no-repeat}
+.impact__txt h2{color:var(--ink)}
+.impact__txt p:not(.eyebrow){color:var(--muted)}
+.impact__panel{background:#fff;border-radius:8px;padding:clamp(32px,4vw,56px);box-shadow:0 2px 0 rgba(14,24,64,.03)}
+.stat+.stat{border-left-color:var(--line)}
+.stat:nth-child(1) b{color:#5aa332}
+.stat:nth-child(2) b{color:#1592c8}
+.stat:nth-child(3) b{color:var(--blue)}
+.stat em{color:var(--ink)}
+.stat p{color:var(--muted)}
+.feature{max-width:none;margin:0}
+
+/* Projects (white): cards get a hairline so they still read on white */
+.projects{background:#fff}
+.pcard,.record{border:1px solid var(--line)}
+.news{background:#fff}
+
+/* Certification & patents + partners (gray) */
+.proof,.partners{background:var(--band)}
+.proof__cert::after{bottom:-1px}
+.partners{padding-top:clamp(8px,2vw,24px)}
+.logos{background:#fff}
+.logos li:hover{background:var(--band)}
+
+/* Contact (white) */
+.contact{background:#fff;border-top:1px solid var(--line)}
+
+@media (max-width:1080px){.impact__panel{padding:28px}}
+@media (max-width:760px){
+  .impact__panel{padding:24px 20px}
+  .stat,.stat+.stat{border-left:0}
+  .stat+.stat{border-top-color:var(--line)}
+}
+/* Projects → News are one menu group: no double gap between them */
+.news{padding-top:clamp(16px,2.5vw,32px)}
+@media (max-width:760px){.projects{padding-bottom:48px}.news{padding-top:8px}}
