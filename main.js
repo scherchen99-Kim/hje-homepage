@@ -191,6 +191,20 @@ const esClient = c => ES_CLIENT[c] || c.replace(/ City$/, ' (ciudad)').replace(/
 const LANG = document.documentElement.lang.slice(0, 2);
 if (LANG === 'ko') REC.forEach((r, i) => { REC[i] = [...REC_KO[i], r[5]]; });
 if (LANG === 'zh') REC.forEach((r, i) => { REC[i] = [...REC_ZH[i], r[5]]; });
+// Malay labels: place and company names stay as in English
+const MS_WASTE = {
+  'Oil / municipal': 'Minyak / sisa perbandaran', 'Light & waste oil': 'Diesel dan minyak terpakai', 'Light oil / municipal': 'Diesel / sisa perbandaran',
+  'Light oil': 'Diesel', 'Municipal waste': 'Sisa perbandaran', 'Gas / municipal': 'Gas / sisa perbandaran', 'Factory waste': 'Sisa kilang',
+  'Methane gas / factory': 'Gas metana / sisa kilang', 'Gas / factory waste': 'Gas / sisa kilang', 'Factory / municipal': 'Sisa kilang / perbandaran',
+  'Light oil / factory': 'Diesel / sisa kilang', 'Light & waste oil / factory': 'Diesel dan minyak terpakai / sisa kilang',
+  'Light oil / factory / municipal': 'Diesel / sisa kilang / sisa perbandaran', 'Waste oil / municipal': 'Minyak terpakai / sisa perbandaran',
+  'Methane gas': 'Gas metana', 'Waste oil': 'Minyak terpakai', 'Military waste': 'Sisa ketenteraan', 'Medical waste': 'Sisa perubatan',
+  'COG / factory sludge': 'Gas ketuhar kok / enap cemar kilang', 'COG / carbon': 'Gas ketuhar kok / karbon', 'Waste oil / sludge': 'Minyak terpakai / enap cemar',
+};
+const MS_CLIENT = { 'Air Force': 'Tentera Udara', '3 military schools': '3 sekolah tentera', 'Gumi City sewage plant': 'Loji rawatan kumbahan Bandar Gumi' };
+const msCap = c => c.replace('Kiln / dryer', 'Tanur / pengering').replace('Kiln', 'Tanur').replace(/t\/day/g, 'tan/hari').replace(/t\/h$/, 'tan/jam');
+const msClient = c => MS_CLIENT[c] || c.replace(/^(.*) City$/, 'Bandar $1').replace(/^(.*) County$/, 'Daerah $1');
+if (LANG === 'ms') REC.forEach((r, i) => { REC[i] = [r[0], msClient(r[1]), MS_WASTE[r[2]] || r[2], msCap(r[3]), r[4] === 'Government' ? 'Kerajaan' : r[4], r[5]]; });
 if (LANG === 'es') REC.forEach((r, i) => { REC[i] = [r[0], esClient(r[1]), ES_WASTE[r[2]] || r[2], esCap(r[3]), r[4] === 'Government' ? 'Gobierno' : r[4], r[5]]; });
 const body = document.getElementById('recBody');
 const record = document.getElementById('record');

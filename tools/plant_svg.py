@@ -44,7 +44,8 @@ snippet = '\n'.join('    ' + l for l in out) + '\n'
 for path, A, ALT in (('index.html', 'assets/', 'HJE waste-to-energy plant: receiving, combustion, heat recovery, flue gas cleaning and power generation'),
                      ('ko/index.html', '../assets/', 'HJE 폐기물 발전 플랜트: 반입, 연소, 열 회수, 배출가스 정화, 전기 생산'),
                      ('zh/index.html', '../assets/', 'HJE垃圾发电厂：接收、燃烧、热能回收、烟气净化和发电'),
-                     ('es/index.html', '../assets/', 'Planta de valorización energética de HJE: recepción, combustión, recuperación de calor, limpieza de gases y generación eléctrica')):
+                     ('es/index.html', '../assets/', 'Planta de valorización energética de HJE: recepción, combustión, recuperación de calor, limpieza de gases y generación eléctrica'),
+                     ('ms/index.html', '../assets/', 'Loji sisa kepada tenaga HJE: penerimaan, pembakaran, perolehan semula haba, pembersihan gas serombong dan penjanaan elektrik')):
     s = open(path).read()
     s = re.sub(r'    <div class="plant reveal" id="plant">.*?\n    </div>\n', '', s, flags=re.S)  # replace old copy
     block = snippet.replace('{A}', A).replace('{ALT}', ALT)

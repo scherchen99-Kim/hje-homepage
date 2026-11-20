@@ -1,15 +1,17 @@
-# Builds zh/index.html and es/index.html from index.html, and refreshes the language menu on all 4 pages.
+# Builds zh/, es/ and ms/ pages from index.html, and refreshes the language menu on all 5 pages.
 # usage (from hje-site/):  python3 tools/build_i18n.py
 import re, sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from i18n_strings import T, KEEP
+from i18n_ms import MS
+TABLES = {'zh': {k: v[0] for k, v in T.items()}, 'es': {k: v[1] for k, v in T.items()}, 'ms': MS}
 
 BASE = 'https://scherchen99-kim.github.io/hje-homepage/'
-LANGS = [('en', '', 'English', 'EN'), ('ko', 'ko/', '한국어', 'KO'), ('zh', 'zh/', '简体中文', '中文'), ('es', 'es/', 'Español', 'ES')]
-HTML_LANG = {'en': 'en', 'ko': 'ko', 'zh': 'zh-CN', 'es': 'es'}
+LANGS = [('en', '', 'English', 'EN'), ('ko', 'ko/', '한국어', 'KO'), ('zh', 'zh/', '简体中文', '中文'), ('es', 'es/', 'Español', 'ES'), ('ms', 'ms/', 'Bahasa Melayu', 'MS')]
+HTML_LANG = {'en': 'en', 'ko': 'ko', 'zh': 'zh-CN', 'es': 'es', 'ms': 'ms'}
 
 GLOBE = '<svg class="globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>'
-CODES = {'en': 'EN', 'ko': 'KO', 'zh': 'ZH', 'es': 'ES'}
+CODES = {'en': 'EN', 'ko': 'KO', 'zh': 'ZH', 'es': 'ES', 'ms': 'MS'}
 
 def menu(cur, root):
     items = []
@@ -25,11 +27,11 @@ def set_menu(s, cur, root):
     s = re.sub(r'<ul class="lang__menu">.*?</ul>', lambda m: '<ul class="lang__menu">\n          ' + items + '\n        </ul>', s, count=1, flags=re.S)
     return s
 
-def translate(src, idx):
+def translate(src, table):
     missing = set()
     def tx(text):
         key = ' '.join(text.split())
-        if key in T: return T[key][idx]
+        if key in table: return table[key]
         if key and any(c.isalpha() for c in key) and key not in KEEP: missing.add(key)
         return None
     def node(m):
@@ -51,17 +53,19 @@ def translate(src, idx):
         out.append(p)
     return ''.join(out), missing
 
-def build(code, idx):
+def build(code):
     s = open('index.html').read()
-    s, missing = translate(s, idx)
+    s, missing = translate(s, TABLES[code])
     s = s.replace('<html lang="en">', f'<html lang="{HTML_LANG[code]}">', 1)
     s = s.replace(f'content="{BASE}"', f'content="{BASE}{code}/"', 1)                 # og:url
-    s = s.replace('content="en_US"', 'content="zh_CN"' if code == 'zh' else 'content="es_419"', 1)
-    title = {'zh': 'HYUCKJIN Energy Plant Engineering | 垃圾发电', 'es': 'HYUCKJIN Energy Plant Engineering | Valorización energética'}[code]
+    s = s.replace('content="en_US"', 'content="' + {'zh': 'zh_CN', 'es': 'es_419', 'ms': 'ms_MY'}[code] + '"', 1)
+    title = {'zh': 'HYUCKJIN Energy Plant Engineering | 垃圾发电', 'es': 'HYUCKJIN Energy Plant Engineering | Valorización energética',
+             'ms': 'HYUCKJIN Energy Plant Engineering | Sisa kepada tenaga'}[code]
     s = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s, count=1)
     s = re.sub(r'(<meta property="og:title" content=")[^"]*"', rf'\g<1>{title}"', s, count=1)
     # 3x re-burn stat: "3 stages" reads better in Chinese
     if code == 'zh': s = s.replace('<span class="count" data-to="3">3</span>×</b>', '<span class="count" data-to="3">3</span>级</b>')
+    if code == 'ms': s = s.replace('<span class="count" data-to="3">3</span>×</b><em>Peringkat pembakaran semula</em>', '<span class="count" data-to="3">3</span></b><em>Peringkat pembakaran semula</em>')
     # paths one folder deeper
     s = s.replace('src="assets/', 'src="../assets/').replace('url(assets/', 'url(../assets/')
     s = s.replace('href="style.css', 'href="../style.css').replace('src="main.js', 'src="../main.js')
@@ -73,8 +77,8 @@ def build(code, idx):
     open(f'{code}/index.html', 'w').write(s)
     return missing
 
-for code, idx in (('zh', 0), ('es', 1)):
-    miss = build(code, idx)
+for code in ('zh', 'es', 'ms'):
+    miss = build(code)
     print(code, 'untranslated:', sorted(miss) if miss else 'none')
 
 # refresh menus on EN and KO
