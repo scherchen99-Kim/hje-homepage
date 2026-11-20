@@ -269,14 +269,25 @@ tbody tr:hover{background:var(--mist)}
   body{font-size:16px}
   .btn--line{display:none}
   .logo img{height:32px}
-  .hero{min-height:620px}
-  .slide::after{background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.8) 45%,rgba(255,255,255,0) 75%)}
-  .slide--dark::after{background:linear-gradient(180deg,rgba(8,20,14,.88) 0%,rgba(8,20,14,.65) 45%,rgba(8,20,14,.05) 78%)}
-  .slide__txt{margin-top:32px;padding-right:var(--gut)}
-  .slide__txt p{font-size:16px}
-  .hero__cards{left:var(--gut);right:var(--gut);bottom:20px;gap:6px}
-  .hcard{flex:1;width:auto;height:64px}
-  .hcard span{font-size:11px;left:6px;right:6px;bottom:6px}
+  /* phone hero: clear photo on top, text on a dark panel below */
+  .hero{height:100svh;min-height:600px;max-height:none}
+  .slide{background:var(--deep);align-items:flex-end}
+  .slide::before{inset:0 0 auto 0;height:52%;background-position:center 35%}
+  .slide::after,.slide--dark::after{inset:0 0 auto 0;height:52%;background:linear-gradient(180deg,transparent 65%,var(--deep) 100%)}
+  .slide__txt{margin:0;padding:0 var(--gut) 76px;max-width:none}
+  .slide__txt h1{font-size:34px;margin-bottom:12px;color:#fff}
+  .slide__txt p{font-size:15px;line-height:1.5;margin-bottom:20px;color:rgba(255,255,255,.82)}
+  .slide__txt .btn{height:44px;padding:0 20px}
+  .slide.is-on .slide__txt>*{animation:none}
+  /* thumbnails become slim progress bars */
+  .hero__cards{left:var(--gut);right:var(--gut);bottom:22px;gap:6px;align-items:center}
+  .hcard{flex:1;width:auto;height:24px;border-radius:0;outline:none;background:none}
+  .hcard img,.hcard span,.hcard::after{display:none}
+  .hcard::before{content:"";position:absolute;left:0;right:0;top:10px;height:3px;background:rgba(255,255,255,.28)}
+  .hcard i{top:10px;bottom:auto;height:3px}
+  .hcard.is-on::before{background:rgba(255,255,255,.4)}
+  .hcard:hover{transform:none}
+  .hero__pause{width:30px;height:30px;margin-left:8px}
   .hero__scroll{display:none}
   .statement .wrap,.news__in,.proof__in,.contact__in{grid-template-columns:1fr}
   .ceo{background-position:62% 70%}
