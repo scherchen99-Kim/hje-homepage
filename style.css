@@ -598,3 +598,27 @@ img[data-zoom]{cursor:zoom-in}
 .tech{padding-bottom:clamp(24px,3vw,48px)}
 .history,.impact,.news,.partners{padding-top:clamp(8px,1.5vw,24px)}
 @media (max-width:760px){.statement,.projects,.proof{padding-bottom:32px}.tech{padding-bottom:24px}.history,.impact,.news,.partners{padding-top:8px}}
+
+/* ---- Sustainability: how we keep it clean (from proposal pp.29–32) ---- */
+.clean{margin-top:clamp(40px,5vw,72px);padding-top:clamp(32px,4vw,56px);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4.5vw,72px);align-items:start}
+.clean__kicker{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0 0 14px}
+.clean__intro h3{font-size:clamp(24px,2.3vw,34px);line-height:1.18;letter-spacing:-.02em;font-weight:800;color:var(--ink);margin:0 0 16px;text-wrap:balance}
+.clean__intro>p:not(.clean__kicker){color:var(--muted);line-height:1.65;margin:0 0 28px;text-wrap:pretty}
+.clean__compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.clean__compare figure{margin:0}
+.clean__compare img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;cursor:zoom-in}
+.clean__compare figcaption{margin-top:10px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;color:var(--muted)}
+.clean__compare figcaption::before{content:"";width:8px;height:8px;border-radius:50%;background:#9aa3b5;flex:none}
+.clean__compare .is-hje figcaption{color:var(--ink)}
+.clean__compare .is-hje figcaption::before{background:var(--lgreen)}
+.clean__list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,36px) clamp(20px,2.4vw,40px);counter-reset:none}
+.clean__list li{padding-top:18px;border-top:3px solid var(--lgreen)}
+.clean__list li:nth-child(2){border-top-color:var(--sky)}
+.clean__list li:nth-child(3){border-top-color:var(--blue)}
+.clean__list li:nth-child(4){border-top-color:var(--navy)}
+.clean__list span{display:block;font-size:13px;font-weight:700;color:var(--blue);letter-spacing:.06em;margin-bottom:8px}
+.clean__list h4{font-size:clamp(17px,1.4vw,20px);line-height:1.3;font-weight:800;color:var(--ink);margin:0 0 10px;text-wrap:balance}
+.clean__list p{font-size:15px;line-height:1.65;color:var(--muted);margin:0;text-wrap:pretty}
+@media (max-width:1080px){.clean{grid-template-columns:1fr}}
+@media (max-width:760px){.clean__list{grid-template-columns:1fr}.clean__list p{font-size:14.5px}}
