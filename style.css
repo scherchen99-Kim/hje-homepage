@@ -581,3 +581,15 @@ img[data-zoom]{cursor:zoom-in}
 /* Projects → News are one menu group: no double gap between them */
 .news{padding-top:clamp(16px,2.5vw,32px)}
 @media (max-width:760px){.projects{padding-bottom:48px}.news{padding-top:8px}}
+
+/* FLIPPED: Company gray · Technology white · Projects gray · Certification white · Contact gray
+   (certificates, patents and the plant illustration all have white backgrounds) */
+.statement,.history{background:var(--band)}
+.tech,.impact{background:#fff}
+.impact__panel{border:1px solid var(--line);box-shadow:none}
+.projects,.news{background:var(--band)}
+.pcard,.record{background:#fff}
+.proof,.partners{background:#fff}
+.patent-card{border:1px solid var(--line)}
+.logos{background:#fff}
+.contact{background:var(--band);border-top:0}
