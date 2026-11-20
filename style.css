@@ -658,3 +658,7 @@ img{image-rendering:auto}
 .tl-nav button:hover:not(:disabled){background:var(--navy);color:#fff;border-color:var(--navy)}
 .tl-nav button:disabled{opacity:.35;cursor:default}
 .tl-nav svg{width:18px;height:18px}
+
+/* CEO background on narrow screens: keep the power plant (right side of the image) in view */
+@media (max-width:1080px){.ceo{background-position:84% 62%}}
+@media (max-width:760px){.ceo{background-position:89% 64%}}

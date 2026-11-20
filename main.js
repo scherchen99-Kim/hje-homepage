@@ -251,6 +251,30 @@ renderRec();
   tl.addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
 })();
 
+
+/* ---------- in-page links: every section lands with its label at the same height below the header ---------- */
+(() => {
+  const head = document.querySelector('.hdr');
+  const landY = el => {
+    const label = el.querySelector('.eyebrow') || el.querySelector('h2') || el;
+    const gap = innerWidth < 760 ? 28 : 40;
+    return label.getBoundingClientRect().top + scrollY - (head ? head.offsetHeight : 72) - gap;
+  };
+  document.querySelectorAll('a[href^="#"]:not([href="#top"])').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    const el = id && document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    document.body.classList.remove('menu-open');
+    scrollTo({ top: Math.max(0, landY(el)), behavior: 'smooth' });
+    history.replaceState(null, '', '#' + id);
+  }));
+  if (location.hash.length > 1) {
+    const el = document.getElementById(location.hash.slice(1));
+    if (el) addEventListener('load', () => scrollTo({ top: Math.max(0, landY(el)), behavior: 'instant' }));
+  }
+})();
+
 /* ---------- logo: back to the very top (the #top header is fixed, so the browser would not scroll) ---------- */
 document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener('click', e => {
   e.preventDefault();
