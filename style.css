@@ -593,3 +593,8 @@ img[data-zoom]{cursor:zoom-in}
 .patent-card{border:1px solid var(--line)}
 .logos{background:#fff}
 .contact{background:var(--band);border-top:0}
+/* Same menu group → small gap between sections (intro→history, process→sustainability, projects→news, certification→partners) */
+.statement,.projects,.proof{padding-bottom:clamp(32px,3.5vw,56px)}
+.tech{padding-bottom:clamp(24px,3vw,48px)}
+.history,.impact,.news,.partners{padding-top:clamp(8px,1.5vw,24px)}
+@media (max-width:760px){.statement,.projects,.proof{padding-bottom:32px}.tech{padding-bottom:24px}.history,.impact,.news,.partners{padding-top:8px}}
