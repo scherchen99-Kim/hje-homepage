@@ -1,5 +1,5 @@
 # Generates the animated SVG layer for the Technology section and injects it into index.html / ko/index.html.
-# Coordinates are in the original illustration's pixels (1672 x 941); the site image is cropped to y 170..800.
+# Coordinates are in the original illustration's pixels (1672 x 941); the site image is cropped to y 260..780.
 import re
 FLOWS = [  # step, kind, points
   (1, 'waste', [(150, 706), (262, 706)]),
@@ -20,8 +20,8 @@ GLOWS = [  # step, gradient, cx, cy, r
 ]
 def d(pts): return 'M' + ' L'.join(f'{x},{y}' for x, y in pts)
 out = ['<div class="plant reveal" id="plant">',
-       '  <img src="{A}plant-illustration.jpg" alt="{ALT}" width="1672" height="630">',
-       '  <svg class="plant__fx" viewBox="0 170 1672 630" aria-hidden="true">',
+       '  <img src="{A}plant-illustration.jpg" alt="{ALT}" width="1672" height="520">',
+       '  <svg class="plant__fx" viewBox="0 260 1672 520" aria-hidden="true">',
        '    <defs>',
        '      <radialGradient id="gOrange"><stop offset="0" stop-color="#ff7a1a" stop-opacity=".75"/><stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/></radialGradient>',
        '      <radialGradient id="gYellow"><stop offset="0" stop-color="#f5b400" stop-opacity=".8"/><stop offset="1" stop-color="#f5b400" stop-opacity="0"/></radialGradient>',

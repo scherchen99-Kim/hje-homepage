@@ -341,3 +341,9 @@ html[lang="ko"] .eyebrow{letter-spacing:.04em}
 .flow li{cursor:pointer}
 @keyframes stepBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media (prefers-reduced-motion:reduce){.fx-under,.fx-path{stroke-dashoffset:0}.fx-dot,.fx-glow{opacity:.6}}
+
+/* ===== company intro: factory photo ===== */
+.statement__photo{margin-top:clamp(28px,3vw,44px);max-width:560px}
+.statement__photo img{width:100%;aspect-ratio:2.2/1;object-fit:cover;object-position:center 38%;border-radius:4px}
+.statement__photo figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+.tech .sec-head{margin-bottom:clamp(8px,1.5vw,20px)}
