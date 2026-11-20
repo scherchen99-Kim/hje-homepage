@@ -183,6 +183,8 @@ T = {
  'Waste food, sewage sludge and livestock manure treatment': ('厨余垃圾、污泥及畜禽粪便处理', 'Tratamiento de residuos de alimentos, lodos y estiércol'),
  'Food waste treatment methods': ('厨余垃圾处理方法', 'Métodos de tratamiento de residuos de alimentos'),
  'Vapor treatment device for volatile substance storage tanks': ('挥发性物质储罐蒸发气体处理装置', 'Dispositivo de tratamiento de vapores para tanques de sustancias volátiles'),
+ 'Korean patent certificate': ('韩国专利证书', 'Certificado de patente de Corea'),
+ 'Patent certificates · Korean Intellectual Property Office': ('专利证书 · 韩国知识产权局', 'Certificados de patente · Oficina Coreana de Propiedad Intelectual'),
  # ---- partners ----
  'Partners': ('合作伙伴', 'Socios'),
  "Built with Korea's leading engineering groups": ('<span class="nw">与韩国领先的</span><span class="nw">工程企业</span><span class="nw">携手合作</span>', 'Junto a los principales grupos de ingeniería de Corea'),

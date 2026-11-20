@@ -239,3 +239,18 @@ document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener('cli
   }), { threshold: .35 }).observe(plant);
   steps.forEach((li, i) => li.addEventListener('click', () => { show(i + 1); run(); }));
 })();
+
+/* ---------- patent certificates: click to enlarge ---------- */
+(() => {
+  const links = document.querySelectorAll('.patent-card');
+  if (!links.length) return;
+  const box = document.createElement('div'); box.className = 'lightbox'; box.innerHTML = '<img alt="">';
+  document.body.appendChild(box);
+  const img = box.querySelector('img');
+  links.forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); img.src = a.href; img.alt = a.querySelector('img').alt; box.classList.add('open');
+  }));
+  const close = () => box.classList.remove('open');
+  box.addEventListener('click', close);
+  addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
