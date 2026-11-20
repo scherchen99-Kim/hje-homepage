@@ -388,7 +388,7 @@ html[lang="zh-CN"] p,html[lang="zh-CN"] li,html[lang="zh-CN"] dd,html[lang="zh-C
 /* lightbox */
 .lightbox{position:fixed;inset:0;z-index:100;background:rgba(14,24,64,.86);display:grid;place-items:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;cursor:zoom-out}
 .lightbox.open{opacity:1;visibility:visible}
-.lightbox img{max-width:min(92vw,620px);max-height:88vh;width:auto;height:auto;border-radius:3px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.lightbox img{max-width:min(94vw,1100px);max-height:88vh;width:auto;height:auto;border-radius:3px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
 
 
 /* =====================================================================
@@ -496,3 +496,7 @@ html[lang="zh-CN"] p,html[lang="zh-CN"] li,html[lang="zh-CN"] dd,html[lang="zh-C
   .ceo{background-position:72% 60%}
   .ceo::before{background:linear-gradient(180deg,rgba(255,255,255,.78) 0%,rgba(255,255,255,.45) 55%,rgba(255,255,255,0) 82%)}
 }
+
+/* Cambodia card: site map, centred on the plant location */
+.pcard img.pcard__map{object-position:47% 48%}
+img[data-zoom]{cursor:zoom-in}

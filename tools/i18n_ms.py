@@ -211,6 +211,8 @@ MS = {
    'Perbandaran',
  'Waste-to-energy plant concept':
    'Konsep loji sisa kepada tenaga',
+ 'Proposed plant site in Cambodia, 1.5–2 km from downtown':
+   'Tapak cadangan loji di Kemboja, 1.5–2 km dari pusat bandar',
  'Proposed':
    'Dicadangkan',
  'Cambodia':

@@ -256,13 +256,15 @@ document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener('cli
 
 /* ---------- patent certificates: click to enlarge ---------- */
 (() => {
-  const links = document.querySelectorAll('.patent-card');
+  const links = document.querySelectorAll('.patent-card, img[data-zoom]');
   if (!links.length) return;
   const box = document.createElement('div'); box.className = 'lightbox'; box.innerHTML = '<img alt="">';
   document.body.appendChild(box);
   const img = box.querySelector('img');
   links.forEach(a => a.addEventListener('click', e => {
-    e.preventDefault(); img.src = a.href; img.alt = a.querySelector('img').alt; box.classList.add('open');
+    e.preventDefault();
+    const pic = a.tagName === 'IMG' ? a : a.querySelector('img');
+    img.src = a.tagName === 'IMG' ? a.currentSrc || a.src : a.href; img.alt = pic.alt; box.classList.add('open');
   }));
   const close = () => box.classList.remove('open');
   box.addEventListener('click', close);

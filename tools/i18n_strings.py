@@ -144,6 +144,7 @@ T = {
  'Waste': ('垃圾类型', 'Residuos'),
  'Municipal': ('生活垃圾', 'Municipales'),
  'Waste-to-energy plant concept': ('垃圾发电厂效果图', 'Concepto de planta de valorización energética'),
+ 'Proposed plant site in Cambodia, 1.5–2 km from downtown': ('柬埔寨电厂拟建厂址（距市中心1.5–2公里）', 'Terreno propuesto para la planta en Camboya, a 1.5–2 km del centro'),
  'Proposed': ('方案阶段', 'Propuesto'),
  'Cambodia': ('柬埔寨', 'Camboya'),
  'Municipal waste-to-energy plant on a 30-year BOT basis. Electricity for 17,250+ households and 35+ long-term jobs.':
