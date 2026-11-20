@@ -17,12 +17,12 @@ T = {
  'Contact us': ('联系我们', 'Contáctenos'),
  'Menu': ('菜单', 'Menú'),
  # ---- hero ----
- 'Clean power from city waste.': ('城市垃圾，<br>化为清洁电力。', 'Energía limpia a partir de residuos urbanos.'),
+ 'Clean power from city waste.': ('<span class="nw">城市垃圾，</span><br><span class="nw">化为清洁电力。</span>', 'Energía limpia a partir de residuos urbanos.'),
  'We design and build waste-to-energy plants that turn municipal, industrial and hospital waste into electricity, with patented low-NOx combustion.':
    ('我们设计并建设垃圾发电厂，以专利低氮燃烧技术，将生活垃圾、工业废弃物和医疗废弃物转化为电力。',
     'Diseñamos y construimos plantas de valorización energética que convierten residuos municipales, industriales y hospitalarios en electricidad, con nuestra tecnología patentada de combustión de bajo NOx.'),
  'Our technology': ('了解技术', 'Nuestra tecnología'),
- 'More power from every tonne of waste.': ('每一吨垃圾，<br>发出更多电力。', 'Más energía de cada tonelada de residuos.'),
+ 'More power from every tonne of waste.': ('<span class="nw">每一吨垃圾，</span><br><span class="nw">发出更多电力。</span>', 'Más energía de cada tonelada de residuos.'),
  'Waste is sorted, dried and burned completely. The recovered heat drives turbines, turning city waste into a steady supply of electricity.':
    ('垃圾经过分选、干燥后被彻底燃烧，回收的热量驱动汽轮机，把城市垃圾变成稳定的电力。',
     'Los residuos se clasifican, se secan y se queman por completo. El calor recuperado mueve las turbinas y convierte la basura de la ciudad en un suministro estable de electricidad.'),
@@ -32,7 +32,7 @@ T = {
    ('由马来西亚政府发包的日处理100吨生活垃圾设施，经政府技术检验和试运行后获准投入运营。',
     'Planta de residuos municipales de 100 t/día encargada por el Gobierno de Malasia. Recibió la aprobación para operar tras las pruebas técnicas y la puesta en marcha supervisadas por el gobierno.'),
  'View the project': ('查看项目', 'Ver el proyecto'),
- 'Trusted by governments.': ('深受各国政府信赖。', 'Con la confianza de los gobiernos.'),
+ 'Trusted by governments.': ('深受<span class="nw">各国政府信赖。</span>', 'Con la confianza de los gobiernos.'),
  'Tun Dr Mahathir Mohamad, former Prime Minister of Malaysia, visited our Langkawi plant in March 2021.':
    ('2021年3月，马来西亚前总理敦·马哈蒂尔·穆罕默德博士参观了我们的兰卡威工厂。',
     'En marzo de 2021, Tun Dr. Mahathir Mohamad, ex primer ministro de Malasia, visitó nuestra planta de Langkawi.'),
@@ -50,7 +50,7 @@ T = {
  'CEO · Top Engineer': ('总裁 · 首席工程师', 'Director general · Ingeniero jefe'),
  # ---- intro ----
  'Not an incinerator that ends with smoke. A power plant that starts with waste.':
-   ('不是以浓烟告终的焚烧厂，<br>而是从垃圾开始的发电厂。',
+   ('不是以浓烟告终的<span class="nw">焚烧厂，</span><br>而是从垃圾开始的<span class="nw">发电厂。</span>',
     'No es un incinerador que termina en humo. Es una central eléctrica que empieza con los residuos.'),
  'HJE factory building in Korea': ('位于韩国的HJE工厂', 'Planta de HJE en Corea'),
  'HJE factory · Republic of Korea': ('HJE工厂 · 韩国', 'Planta de HJE · República de Corea'),
@@ -62,7 +62,7 @@ T = {
     'Nuestras plantas operan en Corea y Malasia, y los gobiernos de Filipinas, Indonesia, Vietnam, Camboya y Costa Rica nos han solicitado propuestas.'),
  'About the company': ('了解公司', 'Conozca la empresa'),
  # ---- history ----
- '45+ years in environmental engineering': ('深耕环境工程四十五年以上', 'Más de 45 años en ingeniería ambiental'),
+ '45+ years in environmental engineering': ('深耕环境工程<span class="nw">四十五年以上</span>', 'Más de 45 años en ingeniería ambiental'),
  'Founded as Korea agent for Lamborghini and Thermomec burners (Italy)': ('作为意大利Lamborghini和Thermomec燃烧器的韩国代理商成立', 'Fundada como agente en Corea de los quemadores Lamborghini y Thermomec (Italia)'),
  'Developed gun-type heavy oil burner': ('研发枪式重油燃烧器', 'Desarrollo de un quemador tipo pistola para combustóleo pesado'),
  'Selected by the Ministry of Knowledge Economy for food-waste-to-fuel technology': ('入选韩国知识经济部厨余垃圾燃料化技术开发项目', 'Seleccionada por el Ministerio de Economía del Conocimiento para desarrollar tecnología que convierte residuos de alimentos en combustible'),
@@ -77,7 +77,7 @@ T = {
  # ---- news ----
  'Tun Dr Mahathir Mohamad visiting the Langkawi incinerator plant': ('敦·马哈蒂尔·穆罕默德博士参观兰卡威焚烧厂', 'Tun Dr. Mahathir Mohamad visita la planta incineradora de Langkawi'),
  'Tun Dr Mahathir Mohamad, former Prime Minister of Malaysia, visits the Langkawi plant.': ('马来西亚前总理敦·马哈蒂尔·穆罕默德博士参观兰卡威工厂', 'Tun Dr. Mahathir Mohamad, ex primer ministro de Malasia, visita la planta de Langkawi.'),
- 'Langkawi incinerator plant solves odor and fly problems.': ('兰卡威焚烧厂解决臭味和苍蝇问题', 'La planta incineradora de Langkawi resuelve los problemas de olores y moscas.'),
+ 'Langkawi incinerator plant solves odor and fly problems.': ('<span class="nw">兰卡威焚烧厂</span><span class="nw">解决臭味和</span><span class="nw">苍蝇问题</span>', 'La planta incineradora de Langkawi resuelve los problemas de olores y moscas.'),
  'Kosmo! · Malaysia · 7 March 2021': ('Kosmo! · 马来西亚 · 2021年3月7日', 'Kosmo! · Malasia · 7 de marzo de 2021'),
  "The plant built with HJE technology replaced a failed incinerator on Langkawi Island and now treats the island's municipal and tourism waste every day.":
    ('这座采用HJE技术建造的工厂取代了兰卡威岛上原先运行失败的焚烧设施，如今每天处理岛上的生活垃圾和旅游垃圾。',
@@ -97,10 +97,10 @@ T = {
  'in our patented low-NOx combustion': ('专利低氮燃烧技术', 'en nuestra combustión patentada de bajo NOx'),
  # ---- feature ----
  'Our vision': ('我们的愿景', 'Nuestra visión'),
- 'Plants that sit inside green landscapes, not apart from them.': ('发电厂不应与自然隔绝，<br>而应融入绿色之中。', 'Plantas que forman parte del paisaje verde, no que se apartan de él.'),
+ 'Plants that sit inside green landscapes, not apart from them.': ('发电厂不应<span class="nw">与自然隔绝，</span><br>而应融入<span class="nw">绿色之中。</span>', 'Plantas que forman parte del paisaje verde, no que se apartan de él.'),
  'Explore our projects': ('浏览项目', 'Ver nuestros proyectos'),
  # ---- technology ----
- 'How a HJE plant works': ('HJE发电厂的工作流程', 'Cómo funciona una planta de HJE'),
+ 'How a HJE plant works': ('<span class="nw">HJE发电厂的</span><span class="nw">工作流程</span>', 'Cómo funciona una planta de HJE'),
  'HJE waste-to-energy plant: receiving, combustion, heat recovery, flue gas cleaning and power generation':
    ('HJE垃圾发电厂：接收、燃烧、热能回收、烟气净化和发电', 'Planta de valorización energética de HJE: recepción, combustión, recuperación de calor, limpieza de gases y generación eléctrica'),
  'Receive &amp; sort': ('接收与分选', 'Recepción y clasificación'),
@@ -112,7 +112,7 @@ T = {
  'Clean flue gas': ('烟气净化', 'Depuración de gases'),
  'Air pollution control with continuous stack monitoring (CMS/TMS).': ('配备大气污染防治设施，并对烟囱排放进行连续监测（CMS/TMS）。', 'Control de la contaminación atmosférica con monitoreo continuo de la chimenea (CMS/TMS).'),
  'Generate power': ('发电', 'Generación eléctrica'),
- 'Recovered heat drives turbines that supply electricity to the grid and industry.': ('回收的热量驱动汽轮机，为电网和工业用户供电。', 'El calor recuperado mueve turbinas que suministran electricidad a la red y a la industria.'),
+ 'Recovered heat drives turbines that supply electricity to the grid and industry.': ('回收的热量驱动汽轮机，为电网和工业用户<span class="nw">供电。</span>', 'El calor recuperado mueve turbinas que suministran electricidad a la red y a la industria.'),
  'Engineer checking the grate furnace through an inspection window': ('工程师通过观察窗检查炉排焚烧炉', 'Ingeniero revisando el horno de parrilla por una mirilla'),
  'Incinerator systems': ('焚烧系统', 'Sistemas de incineración'),
  'Municipal, industrial and hospital waste incinerators and furnace systems.': ('生活垃圾、工业及医疗废弃物焚烧炉与炉窑系统。', 'Incineradores y hornos para residuos municipales, industriales y hospitalarios.'),
@@ -173,7 +173,7 @@ T = {
  'Show all installations': ('查看全部业绩', 'Ver todas las instalaciones'),
  # ---- proof ----
  'Certification': ('认证', 'Certificación'),
- "Tested against Korea's emission standards — among the strictest in the world.": ('按照韩国排放标准进行检测——该标准是全球最严格的标准之一。', 'Evaluado conforme a las normas de emisiones de Corea, consideradas entre las más estrictas del mundo.'),
+ "Tested against Korea's emission standards — among the strictest in the world.": ('<span class="nw">按照韩国排放标准</span><span class="nw">进行检测——</span><span class="nw">该标准是全球</span><span class="nw">最严格的标准之一。</span>', 'Evaluado conforme a las normas de emisiones de Corea, consideradas entre las más estrictas del mundo.'),
  'Environmental Management System': ('环境管理体系', 'Sistema de Gestión Ambiental'),
  'Quality Management System': ('质量管理体系', 'Sistema de Gestión de la Calidad'),
  'Patents': ('专利', 'Patentes'),
@@ -185,14 +185,14 @@ T = {
  'Vapor treatment device for volatile substance storage tanks': ('挥发性物质储罐蒸发气体处理装置', 'Dispositivo de tratamiento de vapores para tanques de sustancias volátiles'),
  # ---- partners ----
  'Partners': ('合作伙伴', 'Socios'),
- "Built with Korea's leading engineering groups": ('与韩国领先的工程企业携手合作', 'Junto a los principales grupos de ingeniería de Corea'),
+ "Built with Korea's leading engineering groups": ('<span class="nw">与韩国领先的</span><span class="nw">工程企业</span><span class="nw">携手合作</span>', 'Junto a los principales grupos de ingeniería de Corea'),
  'Samsung Engineering': ('三星工程', 'Samsung Engineering'),
  'LG Machine': ('LG机械', 'LG Machine'),
  'Hyundai Heavy Industries': ('现代重工业', 'Hyundai Heavy Industries'),
  'SK Construction': ('SK建设', 'SK Construction'),
  'Hyundai Engineering': ('现代工程', 'Hyundai Engineering'),
  # ---- contact ----
- 'Planning a waste-to-energy project?': ('正在规划垃圾发电项目？', '¿Planea un proyecto de valorización energética?'),
+ 'Planning a waste-to-energy project?': ('正在规划<span class="nw">垃圾发电项目？</span>', '¿Planea un proyecto de valorización energética?'),
  'Talk to our engineering team.': ('欢迎联系我们的工程团队。', 'Hable con nuestro equipo de ingeniería.'),
  'Head office': ('总部', 'Oficina central'),
  '534, Gomo-ri, Soheul-eup, Pocheon-si, Gyeonggi-do, Republic of Korea': ('韩国京畿道抱川市苏屹邑古毛里534', '534, Gomo-ri, Soheul-eup, Pocheon-si, Gyeonggi-do, República de Corea'),
