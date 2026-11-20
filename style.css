@@ -668,3 +668,13 @@ img{image-rendering:auto}
   .tl-box::after{width:20px}
   .tl-nav{margin:0 0 12px}
 }
+/* history on phones: vertical timeline — every year fully readable, no sideways scrolling */
+@media (max-width:760px){
+  .tl-nav{display:none!important}
+  .tl-box::after{display:none}
+  .timeline{display:block;overflow:visible;padding:4px 0 0 26px;margin-left:5px;border-left:2px solid var(--line);scroll-snap-type:none}
+  .tl{flex:none;width:auto;border-top:0;padding:0 0 26px 0}
+  .tl:last-child{padding-bottom:0}
+  .tl::before{left:-33px;top:9px}
+  .tl b{font-size:26px;margin-bottom:6px}
+}
