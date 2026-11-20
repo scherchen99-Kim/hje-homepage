@@ -640,3 +640,21 @@ img[data-zoom]{cursor:zoom-in}
 .patent-card:hover{transform:none}                                                         /* no lift, border/shadow only */
 .reveal,.reveal.in{opacity:1!important;transform:none!important;transition:none!important} /* no fade-in while scrolling */
 img{image-rendering:auto}
+
+/* ---- smoother scrolling over the plant drawing and the big landscape photo ---- */
+.fx-glow.on{animation:none;opacity:.6}            /* glows stay lit instead of pulsing every frame */
+.plant svg{will-change:transform}                  /* drawing on its own layer */
+.feature::before{will-change:transform;transform:translateZ(0)!important;backface-visibility:hidden}
+
+/* ---- history timeline: full dots, arrows, edge fade ---- */
+.timeline{padding-top:8px;scroll-behavior:smooth}
+.tl-box{position:relative}
+.tl-box::after{content:"";position:absolute;top:0;right:0;bottom:16px;width:clamp(48px,8vw,120px);pointer-events:none;
+  background:linear-gradient(90deg,rgba(238,242,248,0),var(--band));transition:opacity .25s}
+.tl-box.at-end::after{opacity:0}
+.tl-nav{display:flex;gap:8px;justify-content:flex-end;margin:-8px 0 16px}
+.tl-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);
+  display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s,opacity .2s}
+.tl-nav button:hover:not(:disabled){background:var(--navy);color:#fff;border-color:var(--navy)}
+.tl-nav button:disabled{opacity:.35;cursor:default}
+.tl-nav svg{width:18px;height:18px}

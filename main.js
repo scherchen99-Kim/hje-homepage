@@ -226,6 +226,31 @@ document.querySelectorAll('.filters button').forEach(b => b.addEventListener('cl
 document.getElementById('recMore').addEventListener('click', () => { showAll = true; renderRec(); });
 renderRec();
 
+
+/* ---------- history timeline: arrow buttons + right-edge fade ---------- */
+(() => {
+  const tl = document.getElementById('timeline');
+  if (!tl) return;
+  const box = document.createElement('div'); box.className = 'tl-box';
+  tl.parentNode.insertBefore(box, tl); box.appendChild(tl);
+  const nav = document.createElement('div'); nav.className = 'tl-nav';
+  const arrow = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+  nav.innerHTML = `<button type="button" aria-label="Previous">${arrow('M15 5l-7 7 7 7')}</button><button type="button" aria-label="Next">${arrow('M9 5l7 7-7 7')}</button>`;
+  box.parentNode.insertBefore(nav, box);
+  const [prev, next] = nav.querySelectorAll('button');
+  const stepW = () => (tl.querySelector('.tl')?.offsetWidth || 220) * 2;
+  prev.addEventListener('click', () => tl.scrollBy({ left: -stepW() }));
+  next.addEventListener('click', () => tl.scrollBy({ left: stepW() }));
+  const upd = () => {
+    const max = tl.scrollWidth - tl.clientWidth - 2;
+    prev.disabled = tl.scrollLeft <= 2;
+    next.disabled = tl.scrollLeft >= max;
+    box.classList.toggle('at-end', tl.scrollLeft >= max);
+    nav.hidden = max <= 0;
+  };
+  tl.addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+})();
+
 /* ---------- logo: back to the very top (the #top header is fixed, so the browser would not scroll) ---------- */
 document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener('click', e => {
   e.preventDefault();
