@@ -662,3 +662,9 @@ img{image-rendering:auto}
 /* CEO background on narrow screens: keep the power plant (right side of the image) in view */
 @media (max-width:1080px){.ceo{background-position:84% 62%}}
 @media (max-width:760px){.ceo{background-position:89% 64%}}
+/* history on phones: one full item plus a clear peek of the next; no fade over text */
+@media (max-width:760px){
+  .tl{flex-basis:calc((100vw - 2 * var(--gut)) * .74)}
+  .tl-box::after{width:20px}
+  .tl-nav{margin:0 0 12px}
+}

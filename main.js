@@ -242,7 +242,7 @@ renderRec();
   prev.addEventListener('click', () => tl.scrollBy({ left: -stepW() }));
   next.addEventListener('click', () => tl.scrollBy({ left: stepW() }));
   const upd = () => {
-    const max = tl.scrollWidth - tl.clientWidth - 2;
+    const max = tl.scrollWidth - tl.clientWidth - 8;
     prev.disabled = tl.scrollLeft <= 2;
     next.disabled = tl.scrollLeft >= max;
     box.classList.toggle('at-end', tl.scrollLeft >= max);
