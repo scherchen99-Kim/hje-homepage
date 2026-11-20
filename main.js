@@ -156,3 +156,11 @@ document.querySelectorAll('.filters button').forEach(b => b.addEventListener('cl
 }));
 document.getElementById('recMore').addEventListener('click', () => { showAll = true; renderRec(); });
 renderRec();
+
+/* ---------- logo: back to the very top (the #top header is fixed, so the browser would not scroll) ---------- */
+document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  document.body.classList.remove('menu-open');
+  scrollTo({ top: 0, behavior: 'smooth' });
+  history.replaceState(null, '', location.pathname + location.search);
+}));
