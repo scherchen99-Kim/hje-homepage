@@ -205,6 +205,7 @@ T = {
  # ---- footer ----
  'Our company': ('公司概况', 'Nuestra empresa'),
  'Solutions': ('解决方案', 'Soluciones'),
+ 'Certification &amp; patents': ('认证与专利', 'Certificaciones y patentes'),
  'Patents &amp; certification': ('专利与认证', 'Patentes y certificaciones'),
  'Contact': ('联系方式', 'Contacto'),
  'Busan factory': ('釜山工厂', 'Planta de Busan'),

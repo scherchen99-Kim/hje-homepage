@@ -321,6 +321,8 @@ MS = {
    'Syarikat kami',
  'Solutions':
    'Penyelesaian',
+ 'Certification &amp; patents':
+   'Pensijilan dan paten',
  'Patents &amp; certification':
    'Paten dan pensijilan',
  'Contact':
