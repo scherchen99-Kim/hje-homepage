@@ -313,3 +313,31 @@ html[lang="ko"] body{font-family:"Pretendard","Inter Tight",system-ui,-apple-sys
 html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3{letter-spacing:-.03em;line-height:1.2}
 html[lang="ko"] h1,html[lang="ko"] h2{font-weight:800}
 html[lang="ko"] .eyebrow{letter-spacing:.04em}
+
+/* ===== technology: animated plant ===== */
+.plant{position:relative;margin:0 0 8px}
+.plant img{width:100%;height:auto;display:block}
+.plant__fx{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.fx-under,.fx-path{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:var(--len,2000);stroke-dashoffset:var(--len,2000);transition:stroke-dashoffset 1.3s cubic-bezier(.4,0,.2,1)}
+.fx-under{stroke:#fff;stroke-width:12}
+.fx-path{stroke-width:7}
+.fx-under.on,.fx-path.on{stroke-dashoffset:0}
+.fx-path.fx-waste{stroke:#3fae3f}.fx-path.fx-air{stroke:#4a8fe0}.fx-path.fx-heat{stroke:#f28c28}
+.fx-path.fx-gas{stroke:#1f8f8a}.fx-path.fx-clean{stroke:#8fd3a8;stroke-width:10}.fx-path.fx-steam{stroke:#e23b2e}.fx-path.fx-power{stroke:#f5b400}
+.fx-dot{fill:#fff;stroke-width:3;opacity:0;transition:opacity .5s .9s}
+.fx-dot.fx-waste{stroke:#3fae3f}.fx-dot.fx-air{stroke:#4a8fe0}.fx-dot.fx-heat{stroke:#f28c28}.fx-dot.fx-gas{stroke:#1f8f8a}
+.fx-dot.fx-clean{stroke:#8fd3a8}.fx-dot.fx-steam{stroke:#e23b2e}.fx-dot.fx-power{stroke:#f5b400}
+.fx-dot.on{opacity:1}
+.fx-glow{opacity:0;transition:opacity .6s}
+.fx-glow.on{animation:fxPulse 1.8s ease-in-out infinite}
+@keyframes fxPulse{0%,100%{opacity:.35}50%{opacity:.85}}
+.fx-puff{fill:#fff;stroke:#c9d6e0;stroke-width:2;visibility:hidden}
+.fx-puff.on{visibility:visible}
+/* step list follows the animation */
+.flow li{transition:background .3s}
+.flow li h3{transition:color .3s}
+.flow li.active h3{color:var(--green)}
+.flow li.active::before{content:"";position:absolute;left:0;right:0;top:-2px;height:4px;background:var(--green);transform-origin:left;animation:stepBar var(--step,2.4s) linear forwards}
+.flow li{cursor:pointer}
+@keyframes stepBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.fx-under,.fx-path{stroke-dashoffset:0}.fx-dot,.fx-glow{opacity:.6}}

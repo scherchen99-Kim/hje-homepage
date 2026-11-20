@@ -164,3 +164,26 @@ document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener('cli
   scrollTo({ top: 0, behavior: 'smooth' });
   history.replaceState(null, '', location.pathname + location.search);
 }));
+
+/* ---------- technology: animated plant, synced with the 5-step list ---------- */
+(() => {
+  const plant = document.getElementById('plant');
+  if (!plant) return;
+  const steps = [...document.querySelectorAll('.flow li')];
+  const STEP = 2400;
+  plant.querySelectorAll('.fx-path, .fx-under').forEach(p => p.style.setProperty('--len', Math.ceil(p.getTotalLength()) + 1));
+  document.querySelector('.flow').style.setProperty('--step', STEP / 1000 + 's');
+  const turnOn = n => plant.querySelectorAll(`[data-step="${n}"]`).forEach(el => el.classList.add('on'));
+  let cur = 0, timer = null;
+  const show = n => {
+    for (let k = 1; k <= n; k++) turnOn(k);
+    steps.forEach((li, i) => { li.classList.remove('active'); if (i === n - 1) { void li.offsetWidth; li.classList.add('active'); } });
+    cur = n;
+  };
+  const run = () => { clearInterval(timer); timer = setInterval(() => show(cur % steps.length + 1), STEP); };
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { show(steps.length); return; }
+  new IntersectionObserver((es, o) => es.forEach(e => {
+    if (e.isIntersecting) { o.disconnect(); show(1); run(); }
+  }), { threshold: .35 }).observe(plant);
+  steps.forEach((li, i) => li.addEventListener('click', () => { show(i + 1); run(); }));
+})();

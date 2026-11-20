@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="../style.css?v=18">
+<link rel="stylesheet" href="../style.css?v=19">
 </head>
 <body>
 
@@ -188,6 +188,61 @@
     <div class="sec-head reveal">
       <p class="eyebrow">기술</p>
       <h2>HJE 발전소는 이렇게 움직입니다</h2>
+    </div>
+
+    <div class="plant reveal" id="plant">
+      <img src="../assets/plant-illustration.jpg" alt="HJE 폐기물 발전 플랜트: 반입, 연소, 열 회수, 배출가스 정화, 전기 생산" width="1672" height="630">
+      <svg class="plant__fx" viewBox="0 170 1672 630" aria-hidden="true">
+        <defs>
+          <radialGradient id="gOrange"><stop offset="0" stop-color="#ff7a1a" stop-opacity=".75"/><stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/></radialGradient>
+          <radialGradient id="gYellow"><stop offset="0" stop-color="#f5b400" stop-opacity=".8"/><stop offset="1" stop-color="#f5b400" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle class="fx-glow" data-step="3" cx="565" cy="610" r="95" fill="url(#gOrange)" style="animation-delay:0.0s"/>
+        <circle class="fx-glow" data-step="3" cx="738" cy="550" r="80" fill="url(#gOrange)" style="animation-delay:0.3s"/>
+        <circle class="fx-glow" data-step="5" cx="900" cy="660" r="60" fill="url(#gYellow)" style="animation-delay:0.6s"/>
+        <circle class="fx-glow" data-step="5" cx="1006" cy="665" r="55" fill="url(#gYellow)" style="animation-delay:0.9s"/>
+        <circle class="fx-glow" data-step="5" cx="1578" cy="520" r="95" fill="url(#gYellow)" style="animation-delay:1.2s"/>
+        <path id="fp0" class="fx-under" data-step="1" d="M150,706 L262,706"/>
+        <path class="fx-path fx-waste" data-step="1" d="M150,706 L262,706"/>
+        <path id="fp1" class="fx-under" data-step="1" d="M338,700 L338,585"/>
+        <path class="fx-path fx-waste" data-step="1" d="M338,700 L338,585"/>
+        <path id="fp2" class="fx-under" data-step="1" d="M424,616 L492,655"/>
+        <path class="fx-path fx-waste" data-step="1" d="M424,616 L492,655"/>
+        <path id="fp3" class="fx-under" data-step="2" d="M478,676 L640,676"/>
+        <path class="fx-path fx-air" data-step="2" d="M478,676 L640,676"/>
+        <path id="fp4" class="fx-under" data-step="3" d="M613,535 L613,458 L660,458"/>
+        <path class="fx-path fx-heat" data-step="3" d="M613,535 L613,458 L660,458"/>
+        <path id="fp5" class="fx-under" data-step="4" d="M986,622 L1041,602 L1051,595 L1051,477 L1126,477 L1126,505"/>
+        <path class="fx-path fx-gas" data-step="4" d="M986,622 L1041,602 L1051,595 L1051,477 L1126,477 L1126,505"/>
+        <path id="fp6" class="fx-under" data-step="4" d="M1161,612 L1168,612 L1168,560 L1200,558"/>
+        <path class="fx-path fx-gas" data-step="4" d="M1161,612 L1168,612 L1168,560 L1200,558"/>
+        <path id="fp7" class="fx-under" data-step="4" d="M1353,555 L1386,560 L1396,610 L1411,615"/>
+        <path class="fx-path fx-gas" data-step="4" d="M1353,555 L1386,560 L1396,610 L1411,615"/>
+        <path id="fp8" class="fx-under" data-step="4" d="M1436,600 L1436,338"/>
+        <path class="fx-path fx-clean" data-step="4" d="M1436,600 L1436,338"/>
+        <path id="fp9" class="fx-under" data-step="5" d="M822,458 L876,458 L876,614"/>
+        <path class="fx-path fx-steam" data-step="5" d="M822,458 L876,458 L876,614"/>
+        <path id="fp10" class="fx-under" data-step="5" d="M1006,702 L1006,752 L1580,752 L1580,735"/>
+        <path class="fx-path fx-power" data-step="5" d="M1006,702 L1006,752 L1580,752 L1580,735"/>
+        <circle class="fx-dot fx-waste" data-step="1" r="5"><animateMotion dur="1.4s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp0"/></animateMotion></circle>
+        <circle class="fx-dot fx-waste" data-step="1" r="5"><animateMotion dur="1.4s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp1"/></animateMotion></circle>
+        <circle class="fx-dot fx-waste" data-step="1" r="5"><animateMotion dur="1.4s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp2"/></animateMotion></circle>
+        <circle class="fx-dot fx-air" data-step="2" r="5"><animateMotion dur="1.4s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp3"/></animateMotion></circle>
+        <circle class="fx-dot fx-heat" data-step="3" r="5"><animateMotion dur="1.4s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp4"/></animateMotion></circle>
+        <circle class="fx-dot fx-gas" data-step="4" r="5"><animateMotion dur="2.4s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp5"/></animateMotion></circle>
+        <circle class="fx-dot fx-gas" data-step="4" r="5"><animateMotion dur="2.4s" begin="-1.22s" repeatCount="indefinite"><mpath href="#fp5"/></animateMotion></circle>
+        <circle class="fx-dot fx-gas" data-step="4" r="5"><animateMotion dur="1.4s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp6"/></animateMotion></circle>
+        <circle class="fx-dot fx-gas" data-step="4" r="5"><animateMotion dur="1.4s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp7"/></animateMotion></circle>
+        <circle class="fx-dot fx-clean" data-step="4" r="5"><animateMotion dur="2.2s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp8"/></animateMotion></circle>
+        <circle class="fx-dot fx-steam" data-step="5" r="5"><animateMotion dur="1.8s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp9"/></animateMotion></circle>
+        <circle class="fx-dot fx-power" data-step="5" r="5"><animateMotion dur="5.3s" begin="0.00s" repeatCount="indefinite"><mpath href="#fp10"/></animateMotion></circle>
+        <circle class="fx-dot fx-power" data-step="5" r="5"><animateMotion dur="5.3s" begin="-1.34s" repeatCount="indefinite"><mpath href="#fp10"/></animateMotion></circle>
+        <circle class="fx-dot fx-power" data-step="5" r="5"><animateMotion dur="5.3s" begin="-2.67s" repeatCount="indefinite"><mpath href="#fp10"/></animateMotion></circle>
+        <circle class="fx-dot fx-power" data-step="5" r="5"><animateMotion dur="5.3s" begin="-4.01s" repeatCount="indefinite"><mpath href="#fp10"/></animateMotion></circle>
+        <circle class="fx-puff" data-step="4" cx="1436" cy="335" r="10"><animate attributeName="cy" values="335;250" dur="3s" begin="0s" repeatCount="indefinite"/><animate attributeName="r" values="8;26" dur="3s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0" dur="3s" begin="0s" repeatCount="indefinite"/></circle>
+        <circle class="fx-puff" data-step="4" cx="1436" cy="335" r="10"><animate attributeName="cy" values="335;250" dur="3s" begin="1s" repeatCount="indefinite"/><animate attributeName="r" values="8;26" dur="3s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+        <circle class="fx-puff" data-step="4" cx="1436" cy="335" r="10"><animate attributeName="cy" values="335;250" dur="3s" begin="2s" repeatCount="indefinite"/><animate attributeName="r" values="8;26" dur="3s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0" dur="3s" begin="2s" repeatCount="indefinite"/></circle>
+      </svg>
     </div>
 
     <ol class="flow reveal">
@@ -361,6 +416,6 @@
   </div>
 </footer>
 
-<script src="../main.js?v=18"></script>
+<script src="../main.js?v=19"></script>
 </body>
 </html>
