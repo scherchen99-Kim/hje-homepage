@@ -678,3 +678,11 @@ img{image-rendering:auto}
   .tl::before{left:-33px;top:9px}
   .tl b{font-size:26px;margin-bottom:6px}
 }
+/* phones: intro reads headline → text → factory photo */
+@media (max-width:760px){
+  .statement .wrap{display:flex;flex-direction:column;gap:0}
+  .statement__lead{display:contents}
+  .statement h2{order:1;margin-bottom:24px}
+  .statement__body{order:2}
+  .statement__photo{order:3;margin-top:28px;max-width:none}
+}
