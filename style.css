@@ -633,3 +633,10 @@ img[data-zoom]{cursor:zoom-in}
 /* ---- uniform scrolling: no element moves at a different speed than the page ---- */
 .reveal{transform:none!important;transition:opacity .6s ease}
 .feature::before{transform:none!important;will-change:auto;inset:0}
+
+/* ---- no photo effects: photos are plain, static images (smooth, even scrolling) ---- */
+.slide::before,.slide.is-on::before{transform:none!important;transition:none!important}   /* hero: no slow zoom */
+.tcard img,.tcard:hover img{transform:none!important;transition:none!important}           /* no hover zoom */
+.patent-card:hover{transform:none}                                                         /* no lift, border/shadow only */
+.reveal,.reveal.in{opacity:1!important;transform:none!important;transition:none!important} /* no fade-in while scrolling */
+img{image-rendering:auto}
