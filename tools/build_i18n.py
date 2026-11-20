@@ -8,18 +8,21 @@ BASE = 'https://scherchen99-kim.github.io/hje-homepage/'
 LANGS = [('en', '', 'English', 'EN'), ('ko', 'ko/', '한국어', 'KO'), ('zh', 'zh/', '简体中文', '中文'), ('es', 'es/', 'Español', 'ES')]
 HTML_LANG = {'en': 'en', 'ko': 'ko', 'zh': 'zh-CN', 'es': 'es'}
 
+GLOBE = '<svg class="globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>'
+CODES = {'en': 'EN', 'ko': 'KO', 'zh': 'ZH', 'es': 'ES'}
+
 def menu(cur, root):
     items = []
     for code, path, name, _ in LANGS:
         cur_attr = ' aria-current="true"' if code == cur else ''
-        items.append(f'<li><a href="{root}{path}" lang="{HTML_LANG[code]}"{cur_attr}>{name}</a></li>')
+        items.append(f'<li><a href="{root}{path}" lang="{HTML_LANG[code]}"{cur_attr}><span>{name}</span><small>{CODES[code]}</small></a></li>')
     btn = next(b for c, _, _, b in LANGS if c == cur)
     return btn, '\n          '.join(items)
 
 def set_menu(s, cur, root):
     btn, items = menu(cur, root)
-    s = re.sub(r'(<button class="lang__btn" aria-haspopup="true">)[^<]*(<svg)', rf'\g<1>{btn} \2', s, count=1)
-    s = re.sub(r'<ul class="lang__menu">.*?</ul>', '<ul class="lang__menu">\n          ' + items + '\n        </ul>', s, count=1, flags=re.S)
+    s = re.sub(r'(<button class="lang__btn" aria-haspopup="true">).*?(<svg width="10" height="6")', lambda m: m.group(1) + GLOBE + btn + ' ' + m.group(2), s, count=1, flags=re.S)
+    s = re.sub(r'<ul class="lang__menu">.*?</ul>', lambda m: '<ul class="lang__menu">\n          ' + items + '\n        </ul>', s, count=1, flags=re.S)
     return s
 
 def translate(src, idx):

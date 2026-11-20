@@ -254,3 +254,9 @@ document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener('cli
   box.addEventListener('click', close);
   addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
+
+/* ---------- white header: soft shadow once the page scrolls ---------- */
+const hdr = document.querySelector('.hdr');
+const onScrollHdr = () => hdr.classList.toggle('scrolled', scrollY > 8);
+addEventListener('scroll', onScrollHdr, { passive: true }); onScrollHdr();
+// hdr.scrolled
