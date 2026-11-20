@@ -272,8 +272,8 @@ tbody tr:hover{background:var(--mist)}
   /* phone hero: clear photo on top, text on a dark panel below */
   .hero{height:100svh;min-height:600px;max-height:none}
   .slide{background:var(--deep);align-items:flex-end}
-  .slide::before{inset:0 0 auto 0;height:52%;background-position:center 35%}
-  .slide::after,.slide--dark::after{inset:0 0 auto 0;height:52%;background:linear-gradient(180deg,transparent 65%,var(--deep) 100%)}
+  .slide::before{inset:0 0 auto 0;height:54%;transform:none;transition:none;background:linear-gradient(180deg,rgba(16,36,27,0) 50%,rgba(16,36,27,.6) 78%,var(--deep) 98%),var(--img) center 35%/cover no-repeat}
+  .slide::after,.slide--dark::after{display:none}
   .slide__txt{margin:0;padding:0 var(--gut) 76px;max-width:none}
   .slide__txt h1{font-size:34px;margin-bottom:12px;color:#fff}
   .slide__txt p{font-size:15px;line-height:1.5;margin-bottom:20px;color:rgba(255,255,255,.82)}
