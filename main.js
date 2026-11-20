@@ -267,7 +267,7 @@ renderRec();
     e.preventDefault();
     document.body.classList.remove('menu-open');
     scrollTo({ top: Math.max(0, landY(el)), behavior: 'smooth' });
-    history.replaceState(null, '', '#' + id);
+    history.replaceState(null, '', location.pathname + location.search);  // keep the address clean (saved/shared links open at the top)
   }));
   if (location.hash.length > 1) {
     const el = document.getElementById(location.hash.slice(1));
