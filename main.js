@@ -64,18 +64,7 @@ function countUp(root) {
   });
 }
 
-/* ---------- parallax on feature ---------- */
-const feat = document.querySelector('.feature');
-let featTick = false, featOn = false;
-new IntersectionObserver(([e]) => { featOn = e.isIntersecting; }).observe(feat);
-addEventListener('scroll', () => {
-  if (!featOn || featTick) return;
-  featTick = true;
-  requestAnimationFrame(() => {
-    feat.style.setProperty('--py', Math.round(feat.getBoundingClientRect().top * -0.08) + 'px');
-    featTick = false;
-  });
-}, { passive: true });
+/* parallax removed: every part of the page now moves exactly with the scroll */
 
 /* ---------- installation record ---------- */
 // [location, client, waste/fuel, capacity, contractor, type]

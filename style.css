@@ -629,3 +629,7 @@ img[data-zoom]{cursor:zoom-in}
 .hero.offscreen *,.hero.offscreen *::before,.hero.offscreen *::after,
 .plant.offscreen *{animation-play-state:paused!important}
 .feature::before{will-change:transform;transform:translate3d(0,var(--py,0),0)}
+
+/* ---- uniform scrolling: no element moves at a different speed than the page ---- */
+.reveal{transform:none!important;transition:opacity .6s ease}
+.feature::before{transform:none!important;will-change:auto;inset:0}
