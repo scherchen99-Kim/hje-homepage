@@ -686,3 +686,11 @@ img{image-rendering:auto}
   .statement__body{order:2}
   .statement__photo{order:3;margin-top:28px;max-width:none}
 }
+/* phones: technology photos in 16:9 so they take less height */
+@media (max-width:760px){.tcard img{aspect-ratio:16/9;margin-bottom:14px}}
+/* phones: every photo in 16:9 (process drawing keeps its own shape) */
+@media (max-width:760px){
+  .statement__photo img{aspect-ratio:16/9}
+  .pcard img,.pcard--big img{aspect-ratio:16/9;height:auto;min-height:0}
+  .news__img img{aspect-ratio:16/9;object-fit:cover}
+}
