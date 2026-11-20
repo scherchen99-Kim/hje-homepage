@@ -622,3 +622,10 @@ img[data-zoom]{cursor:zoom-in}
 .clean__list p{font-size:15px;line-height:1.65;color:var(--muted);margin:0;text-wrap:pretty}
 @media (max-width:1080px){.clean{grid-template-columns:1fr}}
 @media (max-width:760px){.clean__list{grid-template-columns:1fr}.clean__list p{font-size:14.5px}}
+
+/* ---- scroll performance: freeze effects that are off-screen, drop costly blending ---- */
+.plant img{mix-blend-mode:normal}                       /* Technology is white now, multiply no longer needed */
+.hero.offscreen .slide::before,.hero.offscreen .slide{transition:none}
+.hero.offscreen *,.hero.offscreen *::before,.hero.offscreen *::after,
+.plant.offscreen *{animation-play-state:paused!important}
+.feature::before{will-change:transform;transform:translate3d(0,var(--py,0),0)}

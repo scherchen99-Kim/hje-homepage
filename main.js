@@ -27,10 +27,17 @@ function go(i) {
   });
   schedule();
 }
+let heroVisible = true;
 function schedule() {
   clearTimeout(timer);
-  if (!paused) timer = setTimeout(() => go(cur + 1), DUR);
+  if (!paused && heroVisible) timer = setTimeout(() => go(cur + 1), DUR);
 }
+// off-screen: stop switching slides and freeze the zoom/progress animations (saves GPU while scrolling)
+new IntersectionObserver(([e]) => {
+  heroVisible = e.isIntersecting;
+  hero.classList.toggle('offscreen', !heroVisible);
+  heroVisible ? schedule() : clearTimeout(timer);
+}, { threshold: 0 }).observe(hero);
 cards.forEach(c => c.addEventListener('click', () => go(+c.dataset.i)));
 document.getElementById('pause').addEventListener('click', () => {
   paused = !paused;
@@ -59,9 +66,15 @@ function countUp(root) {
 
 /* ---------- parallax on feature ---------- */
 const feat = document.querySelector('.feature');
+let featTick = false, featOn = false;
+new IntersectionObserver(([e]) => { featOn = e.isIntersecting; }).observe(feat);
 addEventListener('scroll', () => {
-  const r = feat.getBoundingClientRect();
-  if (r.bottom > 0 && r.top < innerHeight) feat.style.setProperty('--py', (r.top * -0.08).toFixed(1) + 'px');
+  if (!featOn || featTick) return;
+  featTick = true;
+  requestAnimationFrame(() => {
+    feat.style.setProperty('--py', Math.round(feat.getBoundingClientRect().top * -0.08) + 'px');
+    featTick = false;
+  });
 }, { passive: true });
 
 /* ---------- installation record ---------- */
@@ -249,9 +262,12 @@ document.querySelectorAll('a[href="#top"]').forEach(a => a.addEventListener('cli
   };
   const run = () => { clearInterval(timer); timer = setInterval(() => show(cur % steps.length + 1), STEP); };
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) { show(steps.length); return; }
-  new IntersectionObserver((es, o) => es.forEach(e => {
-    if (e.isIntersecting) { o.disconnect(); show(1); run(); }
-  }), { threshold: .35 }).observe(plant);
+  let started = false;
+  new IntersectionObserver(es => es.forEach(e => {
+    plant.classList.toggle('offscreen', !e.isIntersecting);
+    if (e.isIntersecting) { if (!started) { started = true; show(1); } run(); }
+    else clearInterval(timer);
+  }), { threshold: .2 }).observe(plant);
   steps.forEach((li, i) => li.addEventListener('click', () => { show(i + 1); run(); }));
 })();
 
