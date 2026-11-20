@@ -9,6 +9,7 @@ T = {
    ('以专利低氮燃烧技术建设垃圾发电厂。创立于1978年。',
     'Plantas de valorización energética con combustión patentada de bajo NOx. Desde 1978.'),
  # ---- header ----
+ 'Company': ('公司简介', 'Empresa'),
  'About us': ('关于我们', 'Quiénes somos'),
  'History': ('发展历程', 'Historia'),
  'Technology': ('技术', 'Tecnología'),

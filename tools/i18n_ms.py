@@ -5,6 +5,8 @@ MS = {
    'HYUCKJIN Energy Plant Engineering (HJE): loji sisa kepada tenaga dengan teknologi pembakaran NOx rendah yang dipatenkan. Sejak 1978.',
  'Waste-to-energy plants with patented low-NOx combustion. Since 1978.':
    'Loji sisa kepada tenaga dengan teknologi pembakaran NOx rendah yang dipatenkan. Sejak 1978.',
+ 'Company':
+   'Syarikat',
  'About us':
    'Tentang kami',
  'History':
