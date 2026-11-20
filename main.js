@@ -20,6 +20,7 @@ hero.style.setProperty('--dur', DUR / 1000 + 's');
 function go(i) {
   cur = (i + slides.length) % slides.length;
   slides.forEach((s, k) => s.classList.toggle('is-on', k === cur));
+  hero.classList.toggle('dark', slides[cur].classList.contains('slide--dark'));
   cards.forEach((c, k) => {
     c.classList.remove('is-on');
     if (k === cur) { void c.offsetWidth; c.classList.add('is-on'); }
