@@ -486,3 +486,13 @@ html[lang="zh-CN"] p,html[lang="zh-CN"] li,html[lang="zh-CN"] dd,html[lang="zh-C
   .stat,.stat+.stat{padding:26px 0 22px;border-left:0}
   .stat+.stat{border-top:1px solid rgba(255,255,255,.14)}
 }
+
+/* --- CEO message on the green-energy background --- */
+.ceo{background-color:#cfe6ee;background-position:center 62%}
+.ceo::before{background:linear-gradient(90deg,rgba(255,255,255,.72) 0%,rgba(255,255,255,.42) 40%,rgba(255,255,255,0) 68%)}
+.ceo .eyebrow{color:var(--blue)}
+.ceo footer span{color:var(--muted)}
+@media (max-width:760px){
+  .ceo{background-position:72% 60%}
+  .ceo::before{background:linear-gradient(180deg,rgba(255,255,255,.78) 0%,rgba(255,255,255,.45) 55%,rgba(255,255,255,0) 82%)}
+}
