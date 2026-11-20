@@ -138,8 +138,60 @@ const REC_KO = [
   ['포항', '포스코', 'COG·탄소', '킬른·건조기 250톤/일', '현대중공업'],
   ['구미', '구미시 하수처리장', '폐유·슬러지', '킬른 9.5톤/시간', '정부 발주'],
 ];
-const IS_KO = document.documentElement.lang === 'ko';
-if (IS_KO) REC.forEach((r, i) => { REC[i] = [...REC_KO[i], r[5]]; });
+// Simplified Chinese labels, same order as REC
+const REC_ZH = [
+  ['闻庆', '闻庆市', '燃油·生活垃圾', '150吨/日', '三星工程 / 韩松制纸'],
+  ['水原', '水原市', '轻油·废油', '250吨/日', '现代重工业'],
+  ['巨济', '巨济市', '轻油·生活垃圾', '150吨/日', 'Jindo'],
+  ['洪城', '洪城郡', '轻油', '200吨/日', 'Jindo'],
+  ['顺天', '顺天市', '生活垃圾', '120吨/日', 'LG机械'],
+  ['加平', '加平郡', '生活垃圾', '100吨/日', '政府'],
+  ['蔚山', 'Green Environ', '燃气·生活垃圾', '110吨/日', '现代重工业'],
+  ['龟尾', 'Toray Saehan', '燃气·生活垃圾', '110吨/日', '三星工程'],
+  ['蔚山', '三星电子', '工业废弃物', '190吨/日', '三星工程'],
+  ['龟尾', 'LG电子', '工业废弃物', '85吨/日', 'LG机械'],
+  ['清州', 'LG化学', '沼气·工业废弃物', '80吨/日', 'LG机械'],
+  ['军浦', 'LG商事', '燃气·工业废弃物', '120吨/日', 'LG机械'],
+  ['梁山', '三星ICT集团', '工业废弃物', '150吨/日', '三星工程'],
+  ['晋州', 'Korea Chemical', '工业·生活垃圾', '150吨/日', 'Jindo'],
+  ['安城', 'Oriental', '工业·生活垃圾', '90吨/日', '三星工程'],
+  ['安养', 'Noroo涂料', '工业废弃物', '100吨/日', 'Jindo'],
+  ['安山', 'Kangsung Ind.', '工业废弃物', '120吨/日', 'Jindo'],
+  ['半月', 'Kukje Chemical', '轻油·工业废弃物', '70吨/日', '三星工程'],
+  ['半月', 'Shinpoong制药', '轻油·废油·工业废弃物', '80吨/日', '三星工程'],
+  ['金海', 'Smil', '轻油·工业·生活垃圾', '70吨/日', 'Jindo'],
+  ['昌原', '晓星重工业', '轻油', '80吨/日', 'Jindo'],
+  ['蔚山', 'Michang Oil', '废油·生活垃圾', '230吨/时', 'Jindo'],
+  ['安城', 'Sinpung Paper', '轻油·工业废弃物', '50吨/日', 'LG机械'],
+  ['丽水', '三养化学', '沼气', '80吨/日', '三养化学'],
+  ['安山', 'Sunglim Yuhwa', '废油', '8吨/时', '三星工程'],
+  ['水原', '空军', '军营生活垃圾', '80吨/日', 'Jindo'],
+  ['永川', '3所军事院校', '军营生活垃圾', '110吨/日', 'Jindo'],
+  ['首尔', '乙支医院', '医疗废弃物', '2.3吨/时', 'HJE'],
+  ['—', '顺天乡大学附属医院', '医疗废弃物', '3.5吨/时', 'HJE'],
+  ['首尔', '天主教江南圣母医院', '医疗废弃物', '2.8吨/时', 'HJE'],
+  ['—', 'One Eco', '医疗废弃物', '2.0吨/时', 'HJE'],
+  ['光阳', 'KY Steel', '焦炉煤气·工业污泥', '窑炉/干燥机 300吨/日', '现代重工业'],
+  ['浦项', '浦项制铁（POSCO）', '焦炉煤气·碳', '窑炉/干燥机 250吨/日', '现代重工业'],
+  ['龟尾', '龟尾市污水处理厂', '废油·污泥', '窑炉 9.5吨/时', '政府'],
+];
+// Spanish labels: place and company names stay as in English, the rest translated
+const ES_WASTE = {
+  'Oil / municipal': 'Petróleo / municipales', 'Light & waste oil': 'Diésel y aceite usado', 'Light oil / municipal': 'Diésel / municipales',
+  'Light oil': 'Diésel', 'Municipal waste': 'Residuos municipales', 'Gas / municipal': 'Gas / municipales', 'Factory waste': 'Residuos industriales',
+  'Methane gas / factory': 'Gas metano / industriales', 'Gas / factory waste': 'Gas / residuos industriales', 'Factory / municipal': 'Industriales / municipales',
+  'Light oil / factory': 'Diésel / industriales', 'Light & waste oil / factory': 'Diésel, aceite usado / industriales',
+  'Light oil / factory / municipal': 'Diésel / industriales / municipales', 'Waste oil / municipal': 'Aceite usado / municipales',
+  'Methane gas': 'Gas metano', 'Waste oil': 'Aceite usado', 'Military waste': 'Residuos militares', 'Medical waste': 'Residuos médicos',
+  'COG / factory sludge': 'Gas de coque / lodos industriales', 'COG / carbon': 'Gas de coque / carbón', 'Waste oil / sludge': 'Aceite usado / lodos',
+};
+const ES_CLIENT = { 'Air Force': 'Fuerza Aérea', '3 military schools': '3 escuelas militares', 'Gumi City sewage plant': 'Planta de aguas residuales de Gumi' };
+const esCap = c => c.replace('Kiln / dryer', 'Horno / secador').replace('Kiln', 'Horno').replace(/t\/day/g, 't/día');
+const esClient = c => ES_CLIENT[c] || c.replace(/ City$/, ' (ciudad)').replace(/ County$/, ' (condado)');
+const LANG = document.documentElement.lang.slice(0, 2);
+if (LANG === 'ko') REC.forEach((r, i) => { REC[i] = [...REC_KO[i], r[5]]; });
+if (LANG === 'zh') REC.forEach((r, i) => { REC[i] = [...REC_ZH[i], r[5]]; });
+if (LANG === 'es') REC.forEach((r, i) => { REC[i] = [r[0], esClient(r[1]), ES_WASTE[r[2]] || r[2], esCap(r[3]), r[4] === 'Government' ? 'Gobierno' : r[4], r[5]]; });
 const body = document.getElementById('recBody');
 const record = document.getElementById('record');
 let filter = 'all', showAll = false;
